@@ -1,0 +1,36 @@
+export const categoryDropdown = [
+	{ key: 'Non-Technical', value: 'Non-Technical' },
+	{ key: 'export-import', value: 'Export/Import' },
+	{ key: 'logistic', value: 'Logistic' },
+	{ key: 'hr', value: 'HR' },
+	{ key: 'Business', value: 'Business' },
+	{
+		key: 'marketingAndCommunication',
+		value: 'Marketing and Communication',
+	},
+	{ key: 'healthcare', value: 'Healthcare' },
+	{ key: 'tech', value: 'Tech' },
+	{ key: 'management', value: 'Management' },
+	{ key: 'engineering', value: 'Engineering' },
+	{ key: 'design', value: 'Design' },
+	{ key: 'finance', value: 'Finance' },
+	{ key: 'science', value: 'Science' },
+	{ key: 'law', value: 'Law' },
+];
+
+export const mapping = {
+	nonTechnical: 'Non-Technical',
+	exportImport: 'Export/Import',
+	logistic: 'Logistic',
+	hr: 'HR',
+	business: 'Business',
+	marketingAndCommunication: 'Marketing and Communication',
+	healthcare: 'Healthcare',
+	tech: 'Tech',
+	management: 'Management',
+	engineering: 'Engineering',
+	design: 'Design',
+	finance: 'Finance',
+	science: 'Science',
+	law: 'Law',
+};
