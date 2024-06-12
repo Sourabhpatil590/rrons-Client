@@ -1,0 +1,25 @@
+.rrons-button {
+	margin-left: 0.25rem;
+	margin-top: 0.5rem;
+	margin-bottom: 0.5rem;
+	margin-right: 0.25rem;
+	padding-top: 0.3rem;
+	padding-bottom: 0.5rem;
+	padding-left: 0.8rem;
+	padding-right: 0.8rem;
+	background-color: #1899d6;
+	border: none;
+	border-radius: 5%;
+	color: white;
+	text-decoration: none;
+
+	&:hover {
+		background-color: #1682b4;
+	}
+
+	.btn-link {
+		&:hover {
+			text-decoration: none;
+		}
+	}
+}
