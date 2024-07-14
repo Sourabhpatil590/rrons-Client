@@ -1,0 +1,104 @@
+.category {
+	/* // background-image: linear-gradient(to right, #d3bcf3, #b197e1); */
+
+	.vstack {
+		h3 {
+			padding-top: 4rem;
+			padding-bottom: 1rem;
+			text-align: center;
+		}
+		p {
+			margin-bottom: 4rem;
+		}
+		.category-row {
+			display: flex;
+			flex-wrap: wrap;
+			justify-content: center;
+
+			.carousel {
+				width: 100%;
+
+				.carousel-indicators {
+					bottom: -3rem;
+				}
+				.carousel-control-prev,
+				.carousel-control-next {
+					width: 5%;
+				}
+
+				.carousel-inner {
+					display: flex !important;
+					padding-left: 9rem;
+					flex-wrap: wrap;
+
+					.carousel-item {
+						.category-item {
+							align-items: center;
+							justify-content: center;
+							font-size: 1rem;
+
+							border: 1px solid #a8b3bf;
+							border-radius: 5px;
+							height: 4rem;
+							/* // background-image: linear-gradient(to right, #e4c7e1, #f2c0f3);
+
+							// .outline {
+							// 	border: 1px solid black;
+							// 	padding: 1rem;
+							// } */
+
+							.vastack p:first-child {
+								font-size: 1.25rem;
+							}
+
+							.vstack {
+								p {
+									text-align: center;
+								}
+							}
+
+							.item-subHeader {
+								font-size: 1rem;
+								color: #6c7c8e;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+
+	/* // .category-item:hover {
+	// background-image: linear-gradient(to right, #4425f2, #5969e9);
+	// background-image: blue;
+	// background-color: blue;
+	// background-image: black;
+
+	// h5 {
+	// 	color: white;
+	// }
+	// }
+	// .carousel-control-prev-icon {
+	// 	background-image: url('../../../public/left-arrow.png');
+	// }
+
+	// .carousel-control-next-icon {
+	// 	background-image: url('../../../public/left-arrow.png');
+	// 	rotate: 180deg;
+	// } */
+}
+
+.we-are-hiring {
+	position: relative;
+	top: 3rem;
+
+	.col-md-9 {
+		border: 1px solid #8080801c;
+		border-radius: 7px;
+		padding: 1rem;
+
+		button {
+			padding-inline: 2rem;
+		}
+	}
+}

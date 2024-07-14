@@ -2,87 +2,177 @@ import React from 'react';
 import { Col, Row, Container, Stack } from 'react-bootstrap';
 import './footer.scss';
 import { Link } from 'react-router-dom';
+import { CiLocationOn } from 'react-icons/ci';
+import { IoCallOutline } from 'react-icons/io5';
+import { IoMailOutline } from 'react-icons/io5';
 
 const Footer = () => {
 	return (
 		<Container
 			fluid
-			className="footer"
+			className="footer mt-5"
 		>
 			<Row
 				md={12}
-				// className="bg-dark"
+				className="footer-row"
 			>
-				<Col md={1}></Col>
 				<Col
 					md={4}
-					className="pt-3"
+					className="align-center-col left-col"
 				>
-					<Row md={12}>
-						<div className="pb-3 text-white">Email :</div>
-						<Stack
-							gap={2}
-							className="pb-5"
+					<Stack className="align-center-col">
+						<div>
+							<p className="header-title-1">RRONS</p>
+							<p className="header-title-2 ps-0">WORKFORCE</p>
+						</div>
+
+						<p className="light-blue-text sub-title text">
+							Recruitment Process Outsourcing & Placement Services
+						</p>
+						<div>
+							<img
+								src="/facebook.png"
+								alt=""
+								href="https://www.facebook.com/RronsProducts"
+							/>
+							<img
+								src="/insta.png"
+								alt=""
+								href="https://www.instagram.com/rrons_rpo"
+							/>
+							<img
+								src="/twitter.png"
+								alt=""
+							/>
+							<img
+								src="/linkedIn.png"
+								alt=""
+								href="https://www.linkedin.com/company/99907026"
+							/>
+							<img
+								src="/youtube.png"
+								alt=""
+							/>
+						</div>
+					</Stack>
+				</Col>
+
+				<Col
+					md={7}
+					className="right-col-footer"
+				>
+					<Row
+						md={12}
+						className="justify-content-center"
+					>
+						<Col
+							md="auto"
+							className="text blue-text"
 						>
-							<div className=" text-white">contact@rrons.com</div>
-							<div className=" text-white">
-								hr.manpower@gmail.com
-							</div>
-						</Stack>
+							Help Center
+						</Col>
+						<Col
+							md="auto"
+							className="text blue-text"
+						>
+							About Us
+						</Col>
+						<Col
+							md="auto"
+							className="text blue-text"
+						>
+							Contact Us
+						</Col>
+						<Col
+							md="auto"
+							className="text blue-text"
+						>
+							FAQ
+						</Col>
+						<Col
+							md="auto"
+							className="text blue-text"
+						>
+							Terms and Conditions
+						</Col>
+						<Col
+							md="auto"
+							className="text blue-text"
+						>
+							Privacy Policies
+						</Col>
+					</Row>
+					<hr />
+					<Row md={12}>
+						<p className="light-blue-text text text-center">
+							If you are looking for any information, please feel
+							free to contact us
+						</p>
 					</Row>
 					<Row>
-						<Stack
-							gap={2}
-							className="pb-5"
-						>
-							<div className=" text-white">Address :</div>
-							<div className=" text-white">
+						<Col md={5}>
+							<CiLocationOn />
+							<p className="pink-text text d-inline-block ps-3">
 								Parbhani District Maharashtra
+							</p>
+							<div>
+								<div>
+									<IoCallOutline />
+									<p className="pink-text text m-0 d-inline-block ps-3">
+										+91 9021585790
+									</p>
+								</div>
+								<div>
+									<IoCallOutline />
+									<p className="pink-text text m-0 d-inline-block ps-3">
+										+91 7559219442
+									</p>
+								</div>
 							</div>
-						</Stack>
-					</Row>
-					<Row className="pb-3">
-						<Stack gap={2}>
-							<div className=" text-white">Contact Us :</div>
-							<div className=" text-white">+91 9021585790</div>
-							<div className=" text-white">+91 7559219442</div>
-						</Stack>
+						</Col>
+						<Col
+							md="auto"
+							className=""
+						>
+							<p className="blue-text text m-0 pe-0">
+								For Clients
+							</p>
+							<p className="blue-text text m-0 pe-0">
+								For Candidates
+							</p>
+							<p className="blue-text text m-0 pe-0">For help</p>
+						</Col>
+						<Col
+							md={4}
+							className="ps-0"
+						>
+							<div>
+								<IoMailOutline />
+								<p className="pink-text text m-0 d-inline-block ps-1">
+									rrons.manpowersol@gmail.com
+								</p>
+							</div>
+
+							<div>
+								<IoMailOutline />
+								<p className="pink-text text m-0 d-inline-block ps-1">
+									hr.rrons@gmail.com
+								</p>
+							</div>
+							<div>
+								<IoMailOutline />
+								<p className="pink-text text m-0 d-inline-block ps-1">
+									contact@rrons.in
+								</p>
+							</div>
+						</Col>
 					</Row>
 				</Col>
-				<Col
-					md={4}
-					className="d-flex justify-content-center pt-3"
-				>
-					<Stack gap={2}>
-						<div className=" text-white">Follow Us :</div>
-						<a
-							href="https://www.instagram.com/rrons_rpo"
-							className=" text-white text-decoration-none"
-						>
-							Instagram
-						</a>
-						<a
-							href="https://www.facebook.com/RronsProducts"
-							className=" text-white text-decoration-none"
-						>
-							Facebook
-						</a>
-						<a
-							href="https://www.linkedin.com/company/99907026"
-							className=" text-white text-decoration-none"
-						>
-							LinkedIn
-						</a>
-					</Stack>
-				</Col>
-				<Col
-					md={2}
-					className="d-flex justify-content-center pt-3"
-				>
-					<Stack gap={2}>
-						<div className=" text-white">Ask Us Anything :</div>
-						<div className=" text-white">FAQ</div>
-					</Stack>
+				<Col className="align-center-col">
+					<img
+						src="/whatsapp.png"
+						alt=""
+					/>
 				</Col>
 			</Row>
 		</Container>

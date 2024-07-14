@@ -1,7 +1,10 @@
 import React from 'react';
 import { Row, Col } from 'react-bootstrap';
 import './header.scss';
-import { Link } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
+import { CgProfile } from 'react-icons/cg';
+import { PiLineVerticalThin } from 'react-icons/pi';
+import Button from '../button/button';
 
 const Header = () => {
 	return (
@@ -10,7 +13,7 @@ const Header = () => {
 			md={12}
 		>
 			{/* <Col md={1}></Col> */}
-			<Col
+			{/* <Col
 				md={1}
 				className="align-center-col ps-5"
 			>
@@ -21,64 +24,109 @@ const Header = () => {
 						className="header-logo"
 					/>
 				</Link>
-			</Col>
-			<Col
-				md={3}
-				className="d-flex"
-			>
-				<Link
-					to="/"
-					className="text-decoration-none"
-				>
-					<h3 className="header-title">Rrons Manpower</h3>
-				</Link>
-			</Col>
-			<Col className="d-flex justify-content-end p-2 pe-5">
+			</Col> */}
+			<Col className="d-flex">
+				<Col md="auto">
+					<p className="header-title-1">RRONS</p>
+				</Col>
 				<Col
 					md="auto"
-					className="align-bottom-col"
+					className="ps-0"
 				>
-					<Link
+					<p className="header-title-2">WORKFORCE</p>
+				</Col>
+
+				{/* <Col className="d-flex justify-content-end p-2 pe-5"> */}
+				<Col
+					md="auto"
+					className="align-center-col"
+				>
+					<NavLink
 						to="/"
-						className="header-subtitle pe-4"
+						// className="header-subtitle active-link ps-3 pe-4"
+						className={({ isActive }) =>
+							isActive
+								? 'header-subtitle active-link ps-3 pe-4'
+								: 'header-subtitle ps-3 pe-4'
+						}
 					>
 						Home
-					</Link>
+					</NavLink>
 				</Col>
 				<Col
 					md="auto"
-					className="align-bottom-col"
+					className="align-center-col"
 				>
-					<Link
+					<NavLink
 						to="/find-job"
-						className="header-subtitle pe-4"
+						className={({ isActive }) =>
+							isActive
+								? 'header-subtitle active-link ps-3 pe-4'
+								: 'header-subtitle ps-3 pe-4'
+						}
 					>
-						Find Job
-					</Link>
+						All Jobs
+					</NavLink>
 				</Col>
-				{/* <Col
-					md="auto"
-					className="align-bottom-col"
-				>
-					<Link
-						to="/about-us"
-						className="header-subtitle pe-4"
-					>
-						About Us
-					</Link>
-				</Col> */}
-
 				<Col
 					md="auto"
-					className="align-bottom-col "
+					className="align-center-col"
 				>
-					<Link
-						to="/candidate-login/?mode=viewProfile"
-						className="header-subtitle pe-4"
+					<NavLink
+						to="/about-us"
+						className={({ isActive }) =>
+							isActive
+								? 'header-subtitle active-link ps-3 pe-4'
+								: 'header-subtitle ps-3 pe-4'
+						}
 					>
-						Profile
-					</Link>
+						More
+					</NavLink>
 				</Col>
+			</Col>
+			<Col className=" d-flex justify-content-end ">
+				<Row className="d-flex">
+					<Col>
+						<Button
+							className="login-button"
+							text="Login"
+						/>
+					</Col>
+					<Col>
+						<Button
+							className="register-button"
+							text="Register"
+						/>
+					</Col>
+					<Col
+						md="auto"
+						className="align-center-col"
+					>
+						<Link
+							to="/candidate-login/?mode=viewProfile"
+							className="blue-text"
+						>
+							<CgProfile />
+						</Link>
+					</Col>
+					<Col
+						md="auto"
+						className="align-center-col"
+					>
+						<PiLineVerticalThin />
+					</Col>
+					<Col
+						className="header-subtitle align-center-col pe-5"
+						md="auto"
+					>
+						<Link
+							to={'#'}
+							className="text-decoration-none blue-text"
+						>
+							Employer's login
+						</Link>
+					</Col>
+				</Row>
 			</Col>
 		</Row>
 	);

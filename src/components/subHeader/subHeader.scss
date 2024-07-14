@@ -1,0 +1,165 @@
+.sub-header {
+	background-color: #f2f6fd;
+	padding-top: 4rem;
+	padding-bottom: 4rem;
+
+	.left-col-sub-header {
+		padding-left: 7rem;
+		padding-right: 2rem;
+
+		.popular-clients {
+			color: #05264e;
+			font-family: poppins, sans-serif;
+			font-weight: 500;
+		}
+	}
+
+	.right-col-sub-header {
+		display: flex;
+		justify-content: center;
+
+		h5 {
+			font-weight: 600;
+		}
+
+		.background-image {
+			background-image: url('../../../public/registerBackground.png');
+			// background-color: white;
+			width: 86%;
+			// padding-left: 2rem;
+			padding-right: 2rem;
+			// padding-top: 1rem;
+			// padding-inline: 6rem;
+			padding-left: 6rem;
+			padding-right: 6rem;
+			background-size: cover;
+			display: flex;
+			justify-content: center;
+			align-items: end;
+
+			.right-form {
+				// width: 70%;
+				// display: flex;
+				// flex-direction: column;
+				// width: 70%;
+				background-color: white;
+				// color: #05264e;
+				font-family: poppins, sans-serif;
+				// font-weight: 600;
+				padding: 1.5rem;
+				padding-top: 2rem;
+				padding-bottom: 2rem;
+				border-radius: 12px;
+				box-shadow: 0rem 2rem 1rem rgba(50, 49, 49, 0.1);
+				// height: auto;
+
+				p {
+					font-size: 1rem;
+					font-family: poppins, sans-serif;
+					font-weight: 300;
+				}
+
+				.pink-button {
+					background-color: #ff4181;
+					width: 100%;
+					font-size: 0.8rem;
+					border: none;
+					color: white;
+					border-radius: 5px;
+					padding: 0.4rem;
+				}
+
+				.login-button {
+					color: #ff4181;
+					background-color: white;
+					border: 1px solid #ff4181;
+				}
+
+				.upload-file {
+					background-color: #f6cedb;
+					border: 1px dashed #ff4181;
+
+					.choose-cv {
+						font-weight: 300;
+						font-family: poppins, sans-serif;
+						color: black;
+						font-size: 1.1rem;
+						text-align: center;
+					}
+					.upload-local {
+						font-weight: 300;
+						font-family: poppins, sans-serif;
+						text-align: center;
+					}
+				}
+			}
+		}
+	}
+}
+
+.search-bar {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	box-shadow: 1rem 1rem 1rem 1rem rgba(93, 87, 87, 0.1);
+	width: auto;
+	border-radius: 25px;
+	background-color: white;
+	padding: 0.3rem;
+	padding-right: 0.1rem;
+
+	.briefcase-icon {
+		width: 0.9rem;
+		margin: 0.2rem;
+	}
+
+	input {
+		border: none;
+		width: 40%;
+		padding-left: 0.4rem;
+		// padding: 0.6rem;
+		background-color: transparent;
+		outline: none;
+	}
+
+	select {
+		border: none;
+		width: 43%;
+		color: gray;
+		outline: none;
+		// padding: 0.5rem;
+		background-color: transparent;
+	}
+
+	.vertical-bar {
+		margin-bottom: 0;
+		font-size: 1.3rem;
+		color: gray;
+	}
+
+	.search-icon {
+		background-color: #ff4181;
+		display: inline-block;
+		border-radius: 50%;
+		width: 38px;
+		height: 38px;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		margin-left: 1rem;
+	}
+}
+
+.subHeader-title {
+	font-family: poppins, sans-serif;
+	font-weight: 700;
+	color: #05264e;
+	font-size: 3.5rem;
+}
+
+.subHeader-subTitle {
+	font-family: poppins, sans-serif;
+	font-weight: 300;
+	color: #05264e;
+	font-size: 1rem;
+}

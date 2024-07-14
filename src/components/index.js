@@ -9,6 +9,9 @@ import Loader from './loader/loader';
 import RecentJobs from './recentJobs/recentJobs';
 import WhyRrons from './whyRrons/whyRrons';
 import AppliedCandidatesTable from './candidateCardTable/appliedCandidateCardTable';
+import CustomCarousel from './carousel/customCarousel';
+import TopRecruiters from './topRecruiters/topRecruiters';
+import Testimonials from './testimonials/testimonials';
 
 export {
 	JobCard,
@@ -22,4 +25,7 @@ export {
 	RecentJobs,
 	WhyRrons,
 	AppliedCandidatesTable,
+	CustomCarousel,
+	TopRecruiters,
+	Testimonials,
 };

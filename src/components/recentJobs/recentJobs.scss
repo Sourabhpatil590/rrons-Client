@@ -1,0 +1,46 @@
+.recent-jobs {
+	.row-cols-md-12 {
+		// padding-inline: 6rem;
+		.job-item {
+			background-color: #fcfdff;
+			width: 21% !important;
+			padding: 2rem;
+			border: 1px solid #a8b3bf;
+			border-radius: 5px;
+			margin-right: 1rem;
+			margin-bottom: 1rem;
+			.vstack {
+				.company {
+					margin-bottom: 0;
+				}
+				.location {
+					margin-bottom: 0;
+					color: #05264e99;
+					padding-top: 0.5rem;
+					padding-bottom: 0.5rem;
+				}
+				.job-description {
+					height: 10rem;
+					overflow: hidden;
+					text-overflow: clip;
+					font-size: 0.8rem;
+					padding-top: 0.5rem;
+					padding-bottom: 0.5rem;
+					margin-bottom: 1rem;
+				}
+				.row {
+					padding-bottom: 1rem;
+					.col-md-auto {
+						button {
+							background-color: transparent;
+							border: 1px solid #ff4181;
+							color: #ff4181;
+							font-weight: 500;
+							padding-inline: 1rem;
+						}
+					}
+				}
+			}
+		}
+	}
+}
