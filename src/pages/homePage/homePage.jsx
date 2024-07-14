@@ -1,60 +1,119 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import {
 	Footer,
 	Header,
 	SubHeader,
 	RecentJobs,
 	WhyRrons,
+	CustomCarousel,
+	Button,
+	TopRecruiters,
+	Testimonials,
 } from '../../components';
-import { Col, Row, Stack } from 'react-bootstrap';
-import { useSelector } from 'react-redux';
+// import { Col, Row } from 'react-bootstrap';
+import './homePage.scss';
+import { Col, Stack, Row } from 'react-bootstrap';
+import { Carousel } from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom';
+import { useState } from 'react';
+import { categoryDropdownNew } from '../commonData/categoryDropdown';
 
 const HomePage = () => {
-	const categories = useSelector((state) => state.metaData.category);
+	const [index, setIndex] = useState(0);
 	const navigate = useNavigate();
+	const len = categoryDropdownNew.length;
+	console.log('array length', len);
+	let items = Math.floor(len / 10) + (len % 10 ? 1 : 0);
+	console.log('items', items);
+	let categoryArray = [];
+	for (let i = 0; i < items; i++) {
+		let start = i * 10;
+		let end = start + 10;
+		categoryArray.push(categoryDropdownNew.slice(start, end));
+	}
+	const handleSelect = (selectedIndex) => {
+		setIndex(selectedIndex);
+	};
 	return (
 		<div>
 			<Header />
 			<SubHeader />
-			{/* <Row md={12}>
-				<Col md="auto">
-					<img
-						src="/workspace.webp"
-						alt="logo"
-						className="workspace-img"
-					/>
-				</Col>
-			</Row> */}
-			{/* <Row
-				md={12}
-				className="horizontal-block"
-			></Row> */}
 			<Row className="category d-flex justify-content-center">
-				<Col md={10}>
+				<Col md={12}>
 					<Stack>
-						<Row className="category-row">
-							<h3>Find Your Next Job</h3>
-							{categories.map((category) => (
-								<Col
-									md={3}
-									key={category.key}
-									className="category-item d-flex p-2"
-									onClick={() => {
-										navigate(
-											'/find-job?category=' + category.key
-										);
-									}}
-								>
-									<h5>{category.value}</h5>
-								</Col>
-							))}
-						</Row>
+						<h3 className="blue-text large-text">
+							Browse by category
+						</h3>
+						<p className="medium-text light-blue-text text-center ">
+							Find the job that’s perfect for you, about 800+ new
+							jobs everyday
+						</p>
+						<Col className="category-row">
+							<Carousel
+								activeIndex={index}
+								onSelect={handleSelect}
+								controls={true}
+								pause="hover"
+								variant="dark"
+							>
+								{categoryArray.map((arr) => (
+									<Carousel.Item>
+										{arr.map((category) => (
+											<Col
+												md={2}
+												key={category.key}
+												className="category-item p-1 m-1 d-inline-block"
+												onClick={() => {
+													navigate(
+														'/find-job?category=' +
+															category.key
+													);
+												}}
+											>
+												{/* <Col>
+													<div>logo</div>
+												</Col> */}
+												<Stack>
+													<p className="blue-text text text-600 m-0">
+														{category.value}
+													</p>
+													{/* <p className="text item-subHeader text-200 m-0">
+														No jobs available
+													</p> */}
+												</Stack>
+											</Col>
+										))}
+									</Carousel.Item>
+								))}
+							</Carousel>
+						</Col>
 					</Stack>
 				</Col>
 			</Row>
+			<Row className="we-are-hiring d-flex align-item-center justify-content-center p-5">
+				<Col
+					md={9}
+					className="align-center-col"
+				>
+					<img src="/weAreHiring.png" />
+					<Stack className="p-4">
+						<h5 className="text blue-text text-600 text-center">
+							Find the one that’s right for you!
+						</h5>
+						<p className="text light-blue-text text-400 text-center">
+							Let’s work together and explore opportunities.
+						</p>
+					</Stack>
+					<Button
+						text="Register Now"
+						onClick={() => navigate('/register')}
+					/>
+				</Col>
+			</Row>
 			<RecentJobs />
+			<TopRecruiters />
 			<WhyRrons />
+			<Testimonials />
 			<Footer />
 		</div>
 	);

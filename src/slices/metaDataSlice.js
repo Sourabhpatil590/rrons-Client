@@ -7,12 +7,12 @@ const metaDataSlice = createSlice({
 		category: [
 			{ key: 'nonTechnical', value: 'Non-Technical' },
 			{ key: 'exportImport', value: 'Export/Import' },
-			{ key: 'logistic', value: 'Logistic' },
+			{ key: 'logistic', value: 'Logistics' },
 			{ key: 'hr', value: 'HR' },
 			{ key: 'business', value: 'Business' },
 			{
-				key: 'marketingAndCommunication',
-				value: 'Marketing and Communication',
+				key: 'marketing',
+				value: 'Marketing',
 			},
 			{ key: 'healthcare', value: 'Healthcare' },
 			{ key: 'tech', value: 'Tech' },

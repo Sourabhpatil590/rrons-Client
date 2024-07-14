@@ -23,3 +23,13 @@
 		}
 	}
 }
+
+.pink-button {
+	background-color: #ff4181;
+	font-size: 0.8rem;
+	border: none;
+	color: white;
+	border-radius: 5px;
+	padding: 0.4rem;
+	height: fit-content;
+}

@@ -4,6 +4,8 @@ import { useNavigate } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import { getService } from '../../serviceAPI/serviceAPI';
 import { Button } from './../index';
+import './recentJobs.scss';
+import { IoLocationOutline } from 'react-icons/io5';
 
 const RecentJobs = () => {
 	const [jobList, setJobList] = useState([]); // Use the useState hook
@@ -15,7 +17,7 @@ const RecentJobs = () => {
 		logistic: 'Logistic',
 		hr: 'HR',
 		business: 'Business',
-		marketingAndCommunication: 'Marketing and Communication',
+		marketing: 'Marketing',
 		healthcare: 'Healthcare',
 		tech: 'Tech',
 		management: 'Management',
@@ -29,7 +31,7 @@ const RecentJobs = () => {
 	useEffect(() => {
 		async function fetchData() {
 			try {
-				const res = await getService('/api/jobs/?status=open&limit=5');
+				const res = await getService('/api/jobs/?status=open&limit=4');
 				setJobList(res.data);
 			} catch (error) {
 				console.log('error:', error);
@@ -39,87 +41,65 @@ const RecentJobs = () => {
 		fetchData();
 	}, []);
 	return (
-		<>
-			<Row className="d-flex justify-content-center p-3">
-				<Col
-					md="auto"
-					className="p-3"
-				>
-					<h3>Recent Jobs</h3>
-				</Col>
+		<div className="recent-jobs">
+			<Row className="d-flex justify-content-center p-5">
+				<Stack>
+					<h2 className="text large-text blue-text text-center">
+						Job of the Day
+					</h2>
+					<p className="text text-400 light-blue-text text-center">
+						Let’s work together and explore opportunities.
+					</p>
+				</Stack>
 			</Row>
 
-			<Stack>
+			<Row
+				md={12}
+				className="d-flex justify-content-center"
+			>
 				{jobList.map((job) => (
-					<Row
-						className="d-flex justify-content-center"
+					<Col
+						md={3}
+						className="job-item"
 						key={job._id}
-						md={12}
 					>
-						<Col
-							md={6}
-							className="job-item"
-						>
-							<Row>
-								<Col
-									className=""
-									md={6}
-								>
-									{' '}
-									<h4>{job.title}</h4>
-								</Col>
-								<Col>
-									<p>{job.description}</p>
-								</Col>
-							</Row>
+						<Stack>
+							<h4 className="text blue-text text-600">
+								{job.title}
+							</h4>
+							<p className="company text blue-text text-600">
+								{job.company}
+							</p>
+							<p className="location text blue-text">
+								<IoLocationOutline className="me-2" />
+								{job.location}
+							</p>
+							<div className="job-description text light-blue-text">
+								{job.description}
+							</div>
 
-							<Row>
-								<Col
-									md={2}
-									className="pe-3"
-								>
-									Category:
-								</Col>
-								<Col md={4}>
-									<p>{mapping[job.category]}</p>
-								</Col>
+							<Row className="d-flex justify-content-between">
 								<Col>
-									<p>Location:</p>
+									<p className="text light-blue-text">
+										{job.updatedAt.split('T')[0]}
+									</p>
 								</Col>
-								<Col>
-									<p>{job.location}</p>
+								<Col md="auto">
+									<Button
+										onClick={() =>
+											navigate(
+												`/candidate-login/?id=${job._id}`
+											)
+										}
+										text="Apply Now >"
+									/>
 								</Col>
 							</Row>
-							<Row>
-								<Col md={2}>Company:</Col>
-								<Col md={4}>
-									<p>{job.company}</p>
-								</Col>
-								<Col>
-									<p>Date:</p>
-								</Col>
-								<Col>
-									<p>{job.updatedAt.split('T')[0]}</p>
-								</Col>
-							</Row>
-						</Col>
-
-						<Col
-							md={3}
-							className="job-item align-center-col align-content-center"
-						>
-							<Button
-								onClick={() =>
-									navigate(`/candidate-login/?id=${job._id}`)
-								}
-								text="Apply"
-							/>
-						</Col>
-						<hr></hr>
-					</Row>
+						</Stack>
+					</Col>
 				))}
-			</Stack>
-		</>
+			</Row>
+		</div>
 	);
 };
 

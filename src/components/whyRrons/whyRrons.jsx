@@ -1,19 +1,20 @@
 import React from 'react';
 import { Col, Row } from 'react-bootstrap';
 import './whyRrons.scss';
+import Button from '../button/button';
 
 const WhyRrons = () => {
 	return (
 		<Row className="why-row d-flex justify-content-center">
-			<Row className="d-flex justify-content-center">
+			{/* <Row className="d-flex justify-content-center">
 				<Col
 					md="auto"
 					className="p-3"
 				>
 					<h3 className="p-3 title">Why Rrons?</h3>
 				</Col>
-			</Row>
-			<Row>
+			</Row> */}
+			<Row className="pt-3">
 				<Col>
 					<Row className="d-flex justify-content-end">
 						<Col
@@ -36,15 +37,15 @@ const WhyRrons = () => {
 					<Row className="d-flex justify-content-center">
 						<Col
 							md={3}
-							className="p-3 large-element"
+							className="p-3"
 						>
-							15
+							<h1 className="large-element">15</h1>
 						</Col>
 						<Col
 							md={3}
 							className="p-3 d-flex align-items-center"
 						>
-							Number of Clients
+							<p className="m-0">Number of Clients</p>
 						</Col>
 					</Row>
 				</Col>
@@ -54,16 +55,24 @@ const WhyRrons = () => {
 							md={2}
 							className="p-3 large-element"
 						>
-							3
+							<h1 className="large-element">3</h1>
 						</Col>
 						<Col
 							md={3}
 							className="p-3 d-flex align-items-center"
 						>
-							Front end employees
+							<p className="m-0">Front end employees</p>
 						</Col>
 					</Row>
 				</Col>
+			</Row>
+			<Row className="py-5">
+				<div className="d-flex justify-content-center align-items-center">
+					<h3 className="d-inline-block text-center  pe-3">
+						To know more about us
+					</h3>
+					<Button text="Contact Us" />
+				</div>
 			</Row>
 		</Row>
 	);

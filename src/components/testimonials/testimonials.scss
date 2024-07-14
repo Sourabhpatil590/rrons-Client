@@ -1,0 +1,49 @@
+.testimonial {
+	padding: 3rem;
+	h3 {
+		-webkit-text-stroke-width: 1px;
+		-webkit-text-stroke-color: #05264e;
+		color: transparent;
+		font-size: 8rem;
+		margin-bottom: -2rem;
+		color: transparent;
+	}
+	.testimonial-row {
+		box-shadow: 0 -27px 26px -5px white;
+		background-color: white;
+		.carousel {
+			.carousel-indicators {
+				top: 17rem;
+			}
+			.carousel-inner {
+				left: 4rem;
+				.carousel-item {
+					.col-md-4 {
+						width: 30%;
+						background-color: #fcfdff;
+						border: 1px solid #a8b3bf;
+						border-radius: 5px;
+						margin: 0.25rem;
+						margin-top: 0;
+						padding: 1.5rem;
+
+						.description {
+							text-align: justify;
+							font-size: 14px;
+						}
+						.company {
+							color: #2e66aa;
+						}
+						.position {
+							font-size: 14px;
+						}
+					}
+				}
+			}
+			.carousel-control-prev,
+			.carousel-control-next {
+				width: 3%;
+			}
+		}
+	}
+}

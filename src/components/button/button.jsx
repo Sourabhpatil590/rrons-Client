@@ -14,7 +14,7 @@ const Button = (props) => {
 	return (
 		<button
 			onClick={handleClick}
-			className={'rrons-button ' + className}
+			className={'pink-button ' + className}
 			disabled={loading}
 		>
 			{loading ? <i className="fa fa-refresh fa-spin">loading</i> : text}
