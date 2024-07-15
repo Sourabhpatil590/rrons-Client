@@ -90,7 +90,7 @@ const HomePage = () => {
 					</Stack>
 				</Col>
 			</Row>
-			<Row className="we-are-hiring d-flex align-item-center justify-content-center p-5">
+			<Row className="we-are-hiring d-flex align-item-center justify-content-center">
 				<Col
 					md={9}
 					className="align-center-col"

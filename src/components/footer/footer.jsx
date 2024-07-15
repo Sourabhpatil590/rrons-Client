@@ -20,10 +20,10 @@ const Footer = () => {
 					md={4}
 					className="align-center-col left-col"
 				>
-					<Stack className="align-center-col">
+					<Stack className="">
 						<div>
-							<p className="header-title-1">RRONS</p>
-							<p className="header-title-2 ps-0">WORKFORCE</p>
+							<p className="pt-0">RRONS</p>
+							<p className="pt-0 ps-0">WORKFORCE</p>
 						</div>
 
 						<p className="light-blue-text sub-title text">
@@ -143,7 +143,7 @@ const Footer = () => {
 							<p className="blue-text text m-0 pe-0">For help</p>
 						</Col>
 						<Col
-							md={4}
+							md="auto"
 							className="ps-0"
 						>
 							<div>
@@ -168,7 +168,10 @@ const Footer = () => {
 						</Col>
 					</Row>
 				</Col>
-				<Col className="align-center-col">
+				<Col
+					className="align-center-col"
+					md={1}
+				>
 					<img
 						src="/whatsapp.png"
 						alt=""

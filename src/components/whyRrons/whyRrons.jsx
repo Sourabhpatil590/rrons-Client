@@ -16,16 +16,16 @@ const WhyRrons = () => {
 			</Row> */}
 			<Row className="pt-3">
 				<Col>
-					<Row className="d-flex justify-content-end">
+					<Row className="d-flex justify-content-end align-items-center">
 						<Col
 							md={3}
-							className="p-3  "
+							className="m-1"
 						>
 							<h1 className="large-element">1k</h1>
 						</Col>
 						<Col
 							md={3}
-							className="p-3 d-flex align-items-center"
+							className="m-1 d-flex align-items-center"
 						>
 							<p className="m-0">
 								Applications Received per vacancy
@@ -34,16 +34,30 @@ const WhyRrons = () => {
 					</Row>
 				</Col>
 				<Col>
-					<Row className="d-flex justify-content-center">
+					{/* <Row className="d-flex justify-content-center ">
 						<Col
 							md={3}
-							className="p-3"
+							className="m-1"
 						>
 							<h1 className="large-element">15</h1>
 						</Col>
 						<Col
 							md={3}
-							className="p-3 d-flex align-items-center"
+							className="m-1 d-flex align-items-center"
+						>
+							<p className="m-0">Number of Clients</p>
+						</Col>
+					</Row> */}
+					<Row className="d-flex justify-content-center">
+						<Col
+							md={3}
+							className="m-1 large-element"
+						>
+							<h1 className="large-element">15</h1>
+						</Col>
+						<Col
+							md={3}
+							className="m-1 d-flex align-items-center"
 						>
 							<p className="m-0">Number of Clients</p>
 						</Col>
@@ -53,13 +67,13 @@ const WhyRrons = () => {
 					<Row className="d-flex justify-content-start">
 						<Col
 							md={2}
-							className="p-3 large-element"
+							className="m-1 large-element"
 						>
 							<h1 className="large-element">3</h1>
 						</Col>
 						<Col
 							md={3}
-							className="p-3 d-flex align-items-center"
+							className="m-1 d-flex align-items-center"
 						>
 							<p className="m-0">Front end employees</p>
 						</Col>

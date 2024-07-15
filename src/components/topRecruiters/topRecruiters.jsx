@@ -39,7 +39,7 @@ const TopRecruiters = () => {
 		<div className="top-recruiters">
 			<Row className="d-flex justify-content-center p-5">
 				<Stack>
-					<h2 className="text large-text blue-text text-center">
+					<h2 className="text large-text blue-text text-center pb-3">
 						Top Recruiters
 					</h2>
 					<p className="text text-400 light-blue-text text-center">
