@@ -126,7 +126,7 @@ const SubHeader = () => {
 							<h5>kickstart your career</h5>
 						</Col>
 						<Col>
-							<p className="subHeader-subTitle">
+							<p className="subHeader-subTitle light-blue-text">
 								Lorem ipsum dolor sit amet, consectetur
 								adipiscing elit. Proin risus nibh, ultricies et
 								auctor.
