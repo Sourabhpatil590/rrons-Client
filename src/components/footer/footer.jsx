@@ -21,7 +21,7 @@ const Footer = () => {
 					className="align-center-col left-col"
 				>
 					<Stack className="">
-						<div>
+						<div className="d-flex">
 							<p className="pt-0">RRONS</p>
 							<p className="pt-0 ps-0">WORKFORCE</p>
 						</div>
@@ -177,6 +177,15 @@ const Footer = () => {
 						alt=""
 					/>
 				</Col>
+			</Row>
+			<Row className="trademark">
+				<p className="blue-text m-0 d-inline-block">
+					{' '}
+					&#169; 2024 Rrons Workforce All rights reserved{' '}
+				</p>
+				<p className="blue-text m-0 d">
+					Designed by Madhu and Developed by Sourabh
+				</p>
 			</Row>
 		</Container>
 	);
