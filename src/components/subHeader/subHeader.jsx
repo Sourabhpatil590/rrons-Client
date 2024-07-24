@@ -4,6 +4,7 @@ import './subHeader.scss';
 import Button from './../button/button';
 import { CiLocationOn } from 'react-icons/ci';
 import { PiLineVerticalThin, PiBriefcaseThin } from 'react-icons/pi';
+import { useNavigate } from 'react-router-dom';
 
 const SubHeader = () => {
 	let locationList = [
@@ -12,6 +13,7 @@ const SubHeader = () => {
 		{ key: 'mumbai', value: 'Mumbai' },
 		{ key: 'Parabhani', value: 'Parabhani' },
 	];
+	const navigate = useNavigate();
 	return (
 		<Row
 			md={12}
@@ -133,12 +135,24 @@ const SubHeader = () => {
 							</p>
 						</Col>
 						<Col>
-							<Button text="Register Now" />
+							<Button
+								text="Register Now"
+								onClick={() =>
+									navigate(
+										'/add-candidate-profile/?mode=viewProfile'
+									)
+								}
+							/>
 						</Col>
 						<Col>
 							<Button
 								className="mt-2 login-button"
 								text="Login"
+								onClick={() =>
+									navigate(
+										'/candidate-login/?mode=viewProfile'
+									)
+								}
 							/>
 						</Col>
 					</div>

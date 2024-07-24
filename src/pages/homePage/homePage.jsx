@@ -12,7 +12,7 @@ import {
 } from '../../components';
 // import { Col, Row } from 'react-bootstrap';
 import './homePage.scss';
-import { Col, Stack, Row } from 'react-bootstrap';
+import { Col, Stack, Row, Container } from 'react-bootstrap';
 import { Carousel } from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom';
 import { useState } from 'react';
@@ -35,7 +35,7 @@ const HomePage = () => {
 		setIndex(selectedIndex);
 	};
 	return (
-		<div>
+		<Container fluid>
 			<Header />
 			<SubHeader />
 			<Row className="category d-flex justify-content-center">
@@ -106,7 +106,9 @@ const HomePage = () => {
 					</Stack>
 					<Button
 						text="Register Now"
-						onClick={() => navigate('/register')}
+						onClick={() =>
+							navigate('/add-candidate-profile/?mode=viewProfile')
+						}
 					/>
 				</Col>
 			</Row>
@@ -115,7 +117,7 @@ const HomePage = () => {
 			<WhyRrons />
 			<Testimonials />
 			<Footer />
-		</div>
+		</Container>
 	);
 };
 
