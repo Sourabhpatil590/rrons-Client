@@ -1,12 +1,13 @@
 import React from 'react';
 import { Row, Col } from 'react-bootstrap';
 import './header.scss';
-import { Link, NavLink } from 'react-router-dom';
+import { Link, NavLink, useNavigate } from 'react-router-dom';
 import { CgProfile } from 'react-icons/cg';
 import { PiLineVerticalThin } from 'react-icons/pi';
 import Button from '../button/button';
 
 const Header = () => {
+	const navigate = useNavigate();
 	return (
 		<Row
 			className="header-row d-flex"
@@ -90,12 +91,20 @@ const Header = () => {
 						<Button
 							className="login-button"
 							text="Login"
+							onClick={() =>
+								navigate('/candidate-login/?mode=viewProfile')
+							}
 						/>
 					</Col>
 					<Col>
 						<Button
 							className="register-button"
 							text="Register"
+							onClick={() =>
+								navigate(
+									'/add-candidate-profile/?mode=viewProfile'
+								)
+							}
 						/>
 					</Col>
 					<Col

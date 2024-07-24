@@ -30,29 +30,58 @@ const Footer = () => {
 							Recruitment Process Outsourcing & Placement Services
 						</p>
 						<div>
-							<img
-								src="/facebook.png"
-								alt=""
+							<a
 								href="https://www.facebook.com/RronsProducts"
-							/>
-							<img
-								src="/insta.png"
-								alt=""
+								target="_blank"
+								rel="noreferrer"
+							>
+								<img
+									src="/facebook.png"
+									alt=""
+								/>
+							</a>
+
+							<a
 								href="https://www.instagram.com/rrons_rpo"
-							/>
-							<img
-								src="/twitter.png"
-								alt=""
-							/>
-							<img
-								src="/linkedIn.png"
-								alt=""
+								target="_blank"
+								rel="noreferrer"
+							>
+								<img
+									src="/insta.png"
+									alt=""
+								/>
+							</a>
+
+							<a
+								target="_blank"
+								rel="noreferrer"
+							>
+								<img
+									src="/twitter.png"
+									alt=""
+								/>
+							</a>
+
+							<a
 								href="https://www.linkedin.com/company/99907026"
-							/>
-							<img
-								src="/youtube.png"
-								alt=""
-							/>
+								target="_blank"
+								rel="noreferrer"
+							>
+								<img
+									src="/linkedIn.png"
+									alt="LinkedIn"
+								/>
+							</a>
+							<a
+								href="#"
+								target="_blank"
+								rel="noreferrer"
+							>
+								<img
+									src="/youtube.png"
+									alt=""
+								/>
+							</a>
 						</div>
 					</Stack>
 				</Col>
@@ -172,10 +201,16 @@ const Footer = () => {
 					className="align-center-col"
 					md={1}
 				>
-					<img
-						src="/whatsapp.png"
-						alt=""
-					/>
+					<a
+						href="https://wa.me/9021585790"
+						target="_blank"
+						rel="noreferrer"
+					>
+						<img
+							src="/whatsapp.png"
+							alt=""
+						/>
+					</a>
 				</Col>
 			</Row>
 			<Row className="trademark">
