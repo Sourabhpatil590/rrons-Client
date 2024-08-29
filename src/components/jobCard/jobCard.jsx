@@ -9,6 +9,7 @@ import { ConfirmationModal } from "../../components";
 import { deleteService, putService } from "../../serviceAPI/serviceAPI";
 import { mapping } from "../../pages/commonData/categoryDropdown";
 import { FaMapMarkerAlt } from "react-icons/fa";
+import CompanyHeader from "./company_header";
 
 export default function JobCard(props) {
     const role = useSelector((state) => state.currentUser.role);
@@ -225,99 +226,26 @@ export function NewJobCard({ job = dummy_job }) {
     const navigate = useNavigate();
 
     return (
-        // <Card style={{ width: "365px" }}>
-        //     <Card.Header as="h5">
-        //         <Container>
-        //             <Row>
-        //                 <Col sm={2} style={{ padding: 0, backgroundColor: "" }}>
-        //                     <img
-        //                         src="./logo.jpg"
-        //                         width={"54px"}
-        //                         height={"54px"}
-        //                     />
-        //                 </Col>
-
-        //                 <Col sm={true} style={{ backgroundColor: "" }}>
-        //                     <Card.Title>{job.company}</Card.Title>
-        //                     <Card.Subtitle className="mb-2 text-muted">
-        //                         {job.location}
-        //                     </Card.Subtitle>
-        //                 </Col>
-        //             </Row>
-        //         </Container>
-        //     </Card.Header>
-        //     <Card.Body>
-        //         <Card.Title>{job.title}</Card.Title>
-        //         <Card.Subtitle className="mb-2 text-muted">
-        //             {job.location}
-        //         </Card.Subtitle>
-        //         <Card.Text>{job.description}</Card.Text>
-        //     </Card.Body>
-        //     <Card.Footer className="text-muted">
-        //         <Container>
-        //             <Row sm={true}>
-        //                 <Col
-        //                     sm={true}
-        //                     style={{ padding: 0, backgroundColor: "" }}
-        //                 >
-        //                     <Card.Text>{job.createdAt}</Card.Text>
-        //                 </Col>
-        //                 <Col
-        //                     sm={true}
-        //                     style={{ padding: 0, backgroundColor: "" }}
-        //                 >
-        //                     <Button
-        //                         className="login-button"
-        //                         text="Apply"
-        //                         onClick={() =>
-        //                             navigate(`/candidate-login/?id=${job._id}`)
-        //                         }
-        //                     />
-        //                 </Col>
-        //             </Row>
-        //         </Container>
-        //     </Card.Footer>
-        // </Card>
         <Card className="mb-3" style={{ width: "365px" }}>
             <Card.Body>
-                <Row style={{}}>
-                    <Col xs={2}>
-                        {/* Replace with your Tesla logo or any other logo */}
-                        <img
-                            alt="Rrons Logo"
-                            src="./logo.jpg"
-                            width={"54px"}
-                            height={"54px"}
-                            style={{
-                                border: "1px solid gray",
-                                borderRadius: "5px",
-                            }}
-                        />
-                    </Col>
-                    <Col xs={10}>
-                        <Card.Title className="ml-2">{job.company}</Card.Title>
-                        <Card.Subtitle className="mb-2 ml-2 gap-2 text-muted">
-                            <FaMapMarkerAlt size={16} color="" />
-                            {job.location}
-                        </Card.Subtitle>
-                    </Col>
-                </Row>
+                <CompanyHeader
+                    location={job.location}
+                    company_name={job.company}
+                    logo_alt={job.company}
+                />
                 <hr />
-                {/* <div
-                    style={{
-                        // lineHeight: "2px",
-                        // color: "black",
-                        margin: "1px",
-                        borderBottom: "1px solid black",
-                    }}
-                /> */}
-                <Card.Title>{job.title}</Card.Title>
+                <Card.Title
+                    className=""
+                    onClick={() => navigate(`/job-details/?id=${job._id}`)}
+                >
+                    {job.title}
+                </Card.Title>
                 <Card.Subtitle className="mb-2 text-muted">
-                    {job.category} · <FaMapMarkerAlt size={16} color="" />{" "}
+                    {job.category} · <FaMapMarkerAlt size={16} color="" />
                     {job.location}
                 </Card.Subtitle>
                 <Card.Text
-                    className="trucate-text truncate-overflow "
+                    className=""
                     style={{
                         // // display: "inline-block",
                         // // WebkitLineClamp: 3,
@@ -330,7 +258,7 @@ export function NewJobCard({ job = dummy_job }) {
                         // textOverflow: "ellipsis",
                     }}
                 >
-                    {job.description}
+                    {job.description.slice(0, 120)} ...
                 </Card.Text>
                 <Row>
                     {/* {job.skills.map((skill) => (
@@ -338,14 +266,6 @@ export function NewJobCard({ job = dummy_job }) {
                         ))} */}
                     <Col>{job.experience}</Col>
                 </Row>
-                {/* <div
-                    style={{
-                        // lineHeight: "2px",
-                        // color: "black",
-                        margin: "1px",
-                        borderBottom: "1px solid black",
-                    }}
-                /> */}
                 <hr />
                 <div className="d-flex justify-content-between">
                     <small className="text-muted">

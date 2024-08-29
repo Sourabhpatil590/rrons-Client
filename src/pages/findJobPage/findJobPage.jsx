@@ -6,6 +6,8 @@ import { updateUserRole } from "../../slices/currentUserSlice";
 import { useState } from "react";
 import { getService } from "../../serviceAPI/serviceAPI";
 import { NewJobCard } from "../../components/jobCard/jobCard";
+import { JobSearchBar } from "../../components/jobs/jobSearchBar";
+import { JobsFilterLayout } from "../../components/jobs/jobFilter";
 
 const FindJobPage = () => {
     // const jobsList = useSelector((state) => state.jobsList.list);
@@ -15,6 +17,8 @@ const FindJobPage = () => {
     const dispatch = useDispatch();
     dispatch(updateUserRole({ role: "client" }));
     let searchParams = new URLSearchParams(window.location.search);
+
+    const filters = useSelector((state) => state.jobsList.jobFilter);
 
     useEffect(() => {
         const applied = searchParams.get("applied");
@@ -35,7 +39,7 @@ const FindJobPage = () => {
         const fetchData = async () => {
             try {
                 let res = await getService(
-                    `/api/jobs/?status=open&category=${category}`
+                    `/api/jobs/?status=open&category=${category}&wmode=WFH`
                 );
                 setJobsList(res.data);
             } catch (error) {
@@ -45,7 +49,24 @@ const FindJobPage = () => {
         fetchData();
     }, []);
 
-    console.log(jobsList);
+    useEffect(() => {
+        const applied = searchParams.get("applied");
+        const type = searchParams.get("type");
+        const category = searchParams.get("category");
+        const fetchData = async () => {
+            try {
+                let res = await getService(
+                    `/api/jobs/?status=open&wmode=${filters.work_mode}&exp=${filters.experience}`
+                );
+                setJobsList(res.data);
+            } catch (error) {
+                console.log("error:", error);
+            }
+        };
+        fetchData();
+    }, [filters]);
+
+    // console.log(jobsList);
 
     return (
         <Container fluid>
@@ -56,18 +77,45 @@ const FindJobPage = () => {
                     <h2 className="text-center py-3">Open Job Positions</h2>
                 </Col>
             </Row>
-
-            <Row className="d-flex justify-content-center gap-4">
-                {jobsList.length !== 0 &&
-                    jobsList?.map(
-                        (job) => <NewJobCard job={job} />
-                        // <JobCard job={job} />
-                    )}
-                {jobsList.length === 0 && (
-                    <p className="text-center p-5 m-5">
-                        No Jobs found for this category
-                    </p>
-                )}
+            <Row
+                style={{
+                    // width: "700px",
+                    display: "flex",
+                    justifyContent: "center",
+                    alignItems: "center",
+                }}
+            >
+                <Col
+                    className="m-2 mb-5"
+                    style={{
+                        // width: "700px",
+                        maxWidth: "800px",
+                        // display: "flex",
+                        // justifyContent: "center",
+                        // alignItems: "center",
+                    }}
+                >
+                    <JobSearchBar />
+                </Col>
+            </Row>
+            <Row>
+                <Col sm={2} className="blue">
+                    <JobsFilterLayout />
+                </Col>
+                <Col sm={8}>
+                    <Row className="d-flex justify-content-center gap-4">
+                        {jobsList.length !== 0 &&
+                            jobsList?.map(
+                                (job) => <NewJobCard job={job} />
+                                // <JobCard job={job} />
+                            )}
+                        {jobsList.length === 0 && (
+                            <p className="text-center p-5 m-5">
+                                No Jobs found for this category
+                            </p>
+                        )}
+                    </Row>
+                </Col>
             </Row>
             <Footer />
         </Container>
