@@ -71,8 +71,8 @@ const NewJobDetailsPage = () => {
                 <Row></Row>
             </Card.Header>
             <Card.Body>
-                <Row  className="justify-content-between">
-                    <Col>
+                <Row   className="justify-content-between">
+                    <Col className="">
                         <Row>
                             <Col md={6}>
                                 <Info label="Industry" value={job.category} />
@@ -117,7 +117,7 @@ const NewJobDetailsPage = () => {
                         </Row>
                         <Row></Row>
                     </Col>
-                    <Col>
+                    <Col className="">
                         <CompanyCard />
                     </Col>
                 </Row>

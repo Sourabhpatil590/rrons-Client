@@ -1,10 +1,11 @@
 import React from "react";
 import { Card, Col, Row } from "react-bootstrap";
 import { FaMapMarkerAlt } from "react-icons/fa";
+import logo_default from "./logo.jpg";
 
 function CompanyHeader({
     company_name = "Rrons",
-    logo = "./logo.jpg",
+    logo = logo_default,
     logo_alt = "Rrons Logo",
     location = "Pune",
 }) {
