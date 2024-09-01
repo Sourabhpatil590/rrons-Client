@@ -4,8 +4,8 @@ import axios from 'axios';
 // dotenv.config();
 // Service API
 const axiosService = axios.create({
-	baseURL: 'https://rrons-server.onrender.com',
-	// baseURL: 'http://localhost:4001',
+	// baseURL: 'https://rrons-server.onrender.com',
+	baseURL: 'http://localhost:4001',
 	headers: {
 		'Content-Type': 'application/json',
 	},
