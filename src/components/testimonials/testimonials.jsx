@@ -1,7 +1,6 @@
 import React from 'react';
-import { Col, Stack, Row } from 'react-bootstrap';
+import { Col, Row } from 'react-bootstrap';
 import { Carousel } from 'react-bootstrap';
-import { useNavigate } from 'react-router-dom';
 import { useState } from 'react';
 import './testimonials.scss';
 
@@ -9,11 +8,11 @@ const Testimonials = () => {
 	const [index, setIndex] = useState(0);
 	const testimonials = [
 		{
-			company: 'Google',
+			company: 'ADM Join flex India Pvt Ltd',
 			description:
-				'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam fringilla enim quis sapien accumsan, a varius ante vehicula. Ut sagittis quam at imperdiet imperdiet. Fusce accumsan eros id mi vulputate sagittis. Lorem ipsum do lordogg sit amet, consectetur adipiscing elit.',
-			name: 'John Doe',
-			position: 'Software Engineer',
+				'Rrons Workforce is a reliable partner for any organisation seeking efficient and effective recruitment solutions. Their dedication, expertise, and customer-centric approach make them and invaluable asset',
+			name: 'Prashant Kudale',
+			position: 'Senior HR & IR Executive',
 		},
 		{
 			company: 'Facebook',

@@ -2,7 +2,6 @@ import React, { useEffect } from 'react';
 import { Row, Container, Col } from 'react-bootstrap';
 import { JobCard, Header, Toast, Footer } from '../../components';
 import { useDispatch, useSelector } from 'react-redux';
-import { updateUserRole } from '../../slices/currentUserSlice';
 import { useState } from 'react';
 import { getService } from '../../serviceAPI/serviceAPI';
 import { NewJobCard } from '../../components/jobCard/jobCard';
@@ -14,8 +13,6 @@ const FindJobPage = () => {
 	let [jobsList, setJobsList] = useState([]);
 	const [showToast, setShowToast] = useState(false);
 	const [ToastMessage, setToastMessage] = useState('');
-	const dispatch = useDispatch();
-	dispatch(updateUserRole({ role: 'client' }));
 	let searchParams = new URLSearchParams(window.location.search);
 
 	const filters = useSelector((state) => state.jobsList.jobFilter);
