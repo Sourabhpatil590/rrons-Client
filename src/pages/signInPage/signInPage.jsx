@@ -13,10 +13,9 @@ const SignInPage = () => {
 	const verifyUser = (e) => {
 		e.preventDefault();
 		if (
-			user.email === e.target.email.value &&
-			user.password === e.target.password.value
+			'sourabhpatil590@gmail.com' === e.target.email.value &&
+			'1234' === e.target.password.value
 		) {
-			// dispatch(updateUser(user));
 			console.log('User verified');
 			navigate('/admin');
 		} else {
