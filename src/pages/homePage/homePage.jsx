@@ -5,12 +5,10 @@ import {
 	SubHeader,
 	RecentJobs,
 	WhyRrons,
-	CustomCarousel,
 	Button,
 	TopRecruiters,
 	Testimonials,
 } from '../../components';
-// import { Col, Row } from 'react-bootstrap';
 import './homePage.scss';
 import { Col, Stack, Row, Container } from 'react-bootstrap';
 import { Carousel } from 'react-bootstrap';
@@ -22,9 +20,7 @@ const HomePage = () => {
 	const [index, setIndex] = useState(0);
 	const navigate = useNavigate();
 	const len = categoryDropdownNew.length;
-	console.log('array length', len);
 	let items = Math.floor(len / 10) + (len % 10 ? 1 : 0);
-	console.log('items', items);
 	let categoryArray = [];
 	for (let i = 0; i < items; i++) {
 		let start = i * 10;
@@ -106,9 +102,7 @@ const HomePage = () => {
 					</Stack>
 					<Button
 						text="Register Now"
-						onClick={() =>
-							navigate('/add-candidate-profile/?mode=viewProfile')
-						}
+						onClick={() => navigate('/register/?mode=viewProfile')}
 					/>
 				</Col>
 			</Row>

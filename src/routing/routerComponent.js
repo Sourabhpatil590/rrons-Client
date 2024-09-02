@@ -11,11 +11,11 @@ import {
 	AdminPage,
 	JobDetailsPage,
 	SignInPage,
-	AddCandidateProfilePage,
+	RegisterPage,
 	HireTalent,
 	AboutUs,
 	ContactUs,
-	CandidateLoginPage,
+	LoginPage,
 	ProfilePage,
 	AppliedCandidates,
 	ErrorPage,
@@ -59,12 +59,12 @@ const router = createBrowserRouter(
 				element={<SignInPage />}
 			></Route>
 			<Route
-				path="candidate-login"
-				element={<CandidateLoginPage />}
+				path="login"
+				element={<LoginPage />}
 			></Route>
 			<Route
-				path="add-candidate-profile"
-				element={<AddCandidateProfilePage />}
+				path="register"
+				element={<RegisterPage />}
 			></Route>
 
 			<Route

@@ -1,4 +1,88 @@
-.justify-center-row {
+.parent-row {
 	display: flex;
 	justify-content: center;
+	background-color: #f2f6fd;
+
+	.parent-col {
+		margin-top: 3rem;
+		margin-bottom: 1.5rem;
+		border-radius: 8px;
+		background-color: white;
+		box-shadow: 1rem 1rem 1rem 1rem rgba(93, 87, 87, 0.1);
+
+		.first-row {
+			padding: 3rem;
+			.top-banner {
+				img {
+					width: 100%;
+					padding: 1rem;
+				}
+			}
+		}
+	}
+}
+
+.row-padding {
+	padding-top: 0.25rem;
+	padding-bottom: 0.25rem;
+}
+
+.skill-row {
+	display: flex;
+
+	.skill-col {
+		box-shadow: 1rem 1rem 1rem 1rem rgba(93, 87, 87, 0.1);
+		margin-top: 1.5rem;
+		margin-bottom: 1.5rem;
+		border-radius: 8px;
+		padding: 2rem;
+
+		.skill-text {
+			padding-top: 0.5rem;
+			padding-bottom: 1rem;
+		}
+
+		.skill-box {
+			border: 1px solid #e0e0e0;
+			border-radius: 20px;
+			margin: 0.2rem;
+			padding-left: 0.5rem;
+			padding-right: 0.5rem;
+			padding-top: 0.5rem;
+			padding-bottom: 0.5rem;
+		}
+	}
+}
+
+.blue-background {
+	background-color: #f2f6fd;
+}
+
+.white-background {
+	background-color: white;
+}
+
+.employment-card {
+	box-shadow: 1rem 1rem 1rem 1rem rgba(93, 87, 87, 0.1);
+	margin-top: 1.5rem;
+	margin-bottom: 1.5rem;
+	border-radius: 8px;
+	padding: 2rem;
+
+	.employment-text {
+		padding-top: 0.5rem;
+		padding-bottom: 1rem;
+	}
+}
+.resume-card {
+	box-shadow: 1rem 1rem 1rem 1rem rgba(93, 87, 87, 0.1);
+	margin-top: 1.5rem;
+	margin-bottom: 1.5rem;
+	border-radius: 8px;
+	padding: 2rem;
+
+	.resume-text {
+		padding-top: 0.5rem;
+		padding-bottom: 1rem;
+	}
 }
