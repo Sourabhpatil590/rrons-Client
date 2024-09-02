@@ -12,8 +12,10 @@ import {
 	postService,
 	getService,
 } from '../../serviceAPI/serviceAPI';
+import NewJobDetailsPage from '../../components/jobCard/newJobDetailsPage';
 
 const JobDetailsPage = () => {
+
 	const navigate = useNavigate();
 	const [job, setJob] = useState({});
 	const URL = useLocation();
@@ -30,6 +32,8 @@ const JobDetailsPage = () => {
 	const [salary, setSalary] = useState();
 	const [experience, setExperience] = useState();
 	const [qualification, setQualification] = useState();
+
+
 	useEffect(() => {
 		if (mode === 'update') {
 			getService(`/api/jobs/${id}`).then((res) => {
@@ -93,6 +97,7 @@ const JobDetailsPage = () => {
 	return (
 		<Container fluid>
 			<Header />
+			<NewJobDetailsPage />
 			<Form onSubmit={handleSubmit}>
 				<Row md={12}>
 					<Col md={4}></Col>

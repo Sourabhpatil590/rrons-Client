@@ -1,10 +1,38 @@
 .job-card {
-	border: gray solid 1px;
-	border-radius: 5px;
-	background-color: white;
-	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    border: gray solid 1px;
+    border-radius: 5px;
+    background-color: white;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
 
-	.job-card-title {
-		// background-color: rgb(0, 204, 255);
-	}
+    .job-card-title {
+        // background-color: rgb(0, 204, 255);
+    }
+}
+.truncate-text {
+    display: -webkit-box;
+    // -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.truncate-overflow {
+    --max-lines: 3;
+    position: relative;
+    max-height: calc(var(--lh) * var(--max-lines));
+    overflow: hidden;
+    padding-right: 1rem;
+}
+.truncate-overflow::before {
+    position: absolute;
+    content: "...";
+    bottom: 0;
+    right: 0;
+}
+.truncate-overflow::after {
+    content: "";
+    position: absolute;
+    right: 0;
+    width: 1rem;
+    height: 1rem;
+    background: white;
 }
