@@ -22,7 +22,7 @@ const Loader = () => {
 				<Bars
 					// height="80"
 					width="200"
-					color="#4fa94d"
+					color="#ff4181"
 					ariaLabel="bars-loading"
 					wrapperStyle={{}}
 					wrapperClass="loader-component"

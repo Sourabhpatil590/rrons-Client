@@ -4,7 +4,13 @@ import { Button, Footer, Header, Loader } from '../../components';
 import { getService } from '../../serviceAPI/serviceAPI';
 import './profile.scss';
 import { useNavigate } from 'react-router-dom';
-
+import { FiEdit } from 'react-icons/fi';
+import { CiLocationOn } from 'react-icons/ci';
+import { PiBriefcaseThin } from 'react-icons/pi';
+import { IoCallOutline } from 'react-icons/io5';
+import { MdOutlineEmail } from 'react-icons/md';
+import { RiMoneyRupeeCircleLine } from 'react-icons/ri';
+import { GiSandsOfTime } from 'react-icons/gi';
 const ProfilePage = () => {
 	const searchParams = new URLSearchParams(window.location.search);
 	const id = searchParams.get('id');
@@ -50,111 +56,234 @@ const ProfilePage = () => {
 		}
 	};
 	return (
-		<Container fluid>
+		<Container
+			fluid
+			className="blue-background"
+		>
 			{loading && <Loader />}
 			<Header />
 			<Row
 				md={12}
-				className="justify-center-row p-3"
+				className="justify-center-row parent-row"
 			>
 				<Col
-					md={6}
-					className="p-3"
+					className="parent-col"
+					md={8}
 				>
-					<h1>Profile details</h1>
-				</Col>
-				<Col>
-					<Button
-						text="Edit"
-						onClick={() =>
-							navigate(
-								`/add-candidate-profile/?mode=update&id=${id}`
-							)
-						}
-					/>
-				</Col>
-			</Row>
-			<Row className="justify-center-row">
-				<Col md={2}>
-					<p>Name:</p>
-				</Col>
-				<Col md={4}>
-					<p>{data?.name}</p>
-				</Col>
-			</Row>
-			<Row className="justify-center-row">
-				<Col md={2}>
-					<p>email:</p>
-				</Col>
-				<Col md={4}>
-					<p>{data?.email}</p>
-				</Col>
-			</Row>
-			<Row className="justify-center-row">
-				<Col md={2}>
-					<p>Contact:</p>
-				</Col>
-				<Col md={4}>
-					<p>{data?.contact}</p>
-				</Col>
-			</Row>
-			<Row className="justify-center-row">
-				<Col md={2}>
-					<p>Education:</p>
-				</Col>
-				<Col md={4}>
-					<p>{data?.education}</p>
-				</Col>
-			</Row>
-			<Row className="justify-center-row">
-				<Col md={2}>
-					<p>Experience</p>
-				</Col>
-				<Col md={4}>
-					<p>{data?.experience}</p>
-				</Col>
-			</Row>
-			<Row className="justify-center-row">
-				<Col md={2}>
-					<p>Skills</p>
-				</Col>
-				<Col md={4}>
-					<p>{data?.skills}</p>
-				</Col>
-			</Row>
-			<Row className="justify-center-row">
-				<Col md={2}>
-					<p>Expected Salary</p>
-				</Col>
-				<Col md={4}>
-					<p>{data?.expectedSalary}</p>
-				</Col>
-			</Row>
-			<Row className="justify-center-row">
-				<Col md={2}>
-					<p>Resume:</p>
-				</Col>
-				<Col md={4}>
-					<Button
-						text="View resume"
-						onClick={showResume}
-					/>
-				</Col>
-			</Row>
-			{show && (
-				<Row className="justify-center-row">
-					{/* <Document file={{ data: resume }} /> */}
-					<object
-						width="100%"
-						height="1000"
-						data={resume}
-						type="application/pdf"
+					<Row
+						md={12}
+						className=" first-row"
 					>
-						{' '}
-					</object>
-					{/* <p>resume</p> */}
-				</Row>
-			)}
+						<Col
+							md={3}
+							className="top-banner"
+						>
+							<img
+								src="/woman.png"
+								alt="profile"
+							></img>
+						</Col>
+						<Col md={9}>
+							<Row className="d-flex justify-content-between">
+								<Col
+									className="text blue-text text-600 text-24"
+									md="auto"
+								>
+									{data?.firstName + ' ' + data?.lastName}
+								</Col>
+								<Col
+									className="blue-text"
+									md="auto"
+								>
+									<FiEdit
+										onClick={() =>
+											navigate(
+												`/register?mode=update&id=${id}`
+											)
+										}
+									/>
+								</Col>
+							</Row>
+							<Row className="text text-600 text-18 medium-blue-text py-1">
+								<Col>{data?.designation}</Col>
+							</Row>
+							<Row className="text text-400 text-16 medium-blue-text py-1">
+								<Col>{'at ' + data?.currentCompany}</Col>
+							</Row>
+							<hr />
+							<Row>
+								<Col>
+									<Row className="row-padding">
+										<Col
+											className="blue-text me-2"
+											md={1}
+										>
+											<CiLocationOn />{' '}
+										</Col>
+										<Col className="text text-400 text-16 medium-blue-text">
+											{data?.location}
+										</Col>
+									</Row>
+									<Row className="row-padding">
+										<Col
+											md={1}
+											className="blue-text me-2"
+										>
+											<PiBriefcaseThin />{' '}
+										</Col>
+										<Col className="text text-400 text-16 medium-blue-text">{`${data?.experienceInYears} years ${data?.experienceInMonths} months`}</Col>
+									</Row>
+									<Row className="row-padding">
+										<Col
+											md={1}
+											className="blue-text me-2"
+										>
+											{' '}
+											<RiMoneyRupeeCircleLine />{' '}
+										</Col>
+										<Col className="text text-400 text-16 medium-blue-text">
+											{data?.currentSalary}
+										</Col>
+									</Row>
+								</Col>
+								<Col>
+									<Row className="row-padding">
+										<Col
+											md={1}
+											className="blue-text me-2"
+										>
+											{' '}
+											<IoCallOutline />{' '}
+										</Col>
+										<Col className="text text-400 text-16 medium-blue-text">
+											{data?.contact}
+										</Col>
+									</Row>
+									<Row className="row-padding">
+										<Col
+											md={1}
+											className="blue-text me-2"
+										>
+											{' '}
+											<MdOutlineEmail />{' '}
+										</Col>
+										<Col className="text text-400 text-16 medium-blue-text">
+											{data?.email}
+										</Col>
+									</Row>
+									<Row className="row-padding">
+										<Col
+											md={1}
+											className="blue-text me-2"
+										>
+											{' '}
+											<GiSandsOfTime />{' '}
+										</Col>
+										<Col className="text text-400 text-16 medium-blue-text">
+											{data?.noticePeriod + ' days'}
+										</Col>
+									</Row>
+								</Col>
+							</Row>
+						</Col>
+					</Row>
+				</Col>
+			</Row>
+			<Row className="skill-row d-flex justify-content-center blue-background">
+				<Col
+					md={8}
+					className="white-background skill-col"
+				>
+					<Row>
+						<Col className="text blue-text text-600 text-18 skill-text">
+							Key skills
+						</Col>
+					</Row>
+					<Row>
+						{data?.skills &&
+							data?.skills[0].split(',').map((skill, index) => (
+								<Col
+									key={index}
+									md="auto"
+									className="skill-box text medium-blue-text text-400 text-16"
+								>
+									{skill}
+								</Col>
+							))}
+					</Row>
+				</Col>
+			</Row>
+			<Row className="d-flex justify-content-center">
+				<Col
+					md={8}
+					className="employment-card white-background"
+				>
+					<Row>
+						<Col
+							md={8}
+							className="text blue-text text-600 text-18 employment-text"
+						>
+							Employment
+						</Col>
+					</Row>
+					<Row className="row-padding">
+						<Col
+							md={8}
+							className="text text-600 text-18 blue-text"
+						>
+							{data?.designation}
+						</Col>
+					</Row>
+					<Row className="row-padding">
+						<Col
+							md={8}
+							className="text text-600 text-16 medium-blue-text"
+						>
+							{data?.currentCompany}
+						</Col>
+					</Row>
+					<Row md="auto">
+						<Col className="text text-400 text-16 medium-blue-text">
+							{data?.workExperience}
+						</Col>
+					</Row>
+				</Col>
+			</Row>
+			<Row className="d-flex justify-content-center">
+				<Col
+					md={8}
+					className="white-background resume-card"
+				>
+					<Row>
+						<Col>
+							<p className="resume-text text blue-text text-600 text-18">
+								Resume:
+							</p>
+						</Col>
+					</Row>
+					<Row className="d-flex justify-content-center p-4">
+						<Col md="auto">
+							<Button
+								text="View resume"
+								onClick={showResume}
+							/>
+						</Col>
+					</Row>
+					<Row>
+						{show && (
+							<object
+								width="100%"
+								height="1000"
+								data={resume}
+								type="application/pdf"
+							>
+								{' '}
+							</object>
+						)}
+					</Row>
+				</Col>
+			</Row>
+
 			<Footer />
 		</Container>
 	);

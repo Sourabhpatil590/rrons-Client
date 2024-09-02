@@ -2,11 +2,11 @@ import React from 'react';
 import { Form, Button, Container, Row, Col } from 'react-bootstrap';
 import { useSelector, useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
-import { updateUserRole } from './../../slices/currentUserSlice';
+// import { updateUser } from './../../slices/currentUserSlice';
 import { Header } from '../../components';
 
 const SignInPage = () => {
-	const user = useSelector((state) => state.currentUser);
+	const user = useSelector((state) => state.currentUser.token);
 	const dispatch = useDispatch();
 	const navigate = useNavigate();
 
@@ -16,7 +16,7 @@ const SignInPage = () => {
 			user.email === e.target.email.value &&
 			user.password === e.target.password.value
 		) {
-			dispatch(updateUserRole({ role: 'admin' }));
+			// dispatch(updateUser(user));
 			console.log('User verified');
 			navigate('/admin');
 		} else {

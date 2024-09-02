@@ -3,14 +3,14 @@ import FindJobPage from './findJobPage/findJobPage';
 import JobDetailsPage from './jobDetailsPage/jobDetailsPage';
 import AdminPage from './adminPage/adminPage';
 import SignInPage from './signInPage/signInPage';
-import AddCandidateProfilePage from './addCandidateProfilePage/addCandidateProfilePage';
+import RegisterPage from './registerPage/registerPage';
 import HireTalent from './hireTalent/hireTalent';
 import AboutUs from './aboutUs/aboutUs';
 import ContactUs from './contactUs/contactUs';
-import CandidateLoginPage from './candidateLoginPage/candidateLoginPage';
 import ProfilePage from './profilePage/profilePage';
 import AppliedCandidates from './appliedCandidatePage/appliedCandidates';
 import ErrorPage from './errorPage/errorPage';
+import LoginPage from './loginPage/LoginPage';
 
 export {
 	HomePage,
@@ -18,8 +18,8 @@ export {
 	AdminPage,
 	JobDetailsPage,
 	SignInPage,
-	AddCandidateProfilePage,
-	CandidateLoginPage,
+	RegisterPage,
+	LoginPage,
 	HireTalent,
 	AboutUs,
 	ContactUs,

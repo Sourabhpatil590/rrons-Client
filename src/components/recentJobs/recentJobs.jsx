@@ -87,9 +87,7 @@ const RecentJobs = () => {
 								<Col md="auto">
 									<Button
 										onClick={() =>
-											navigate(
-												`/candidate-login/?id=${job._id}`
-											)
+											navigate(`/login/?id=${job._id}`)
 										}
 										text="Apply Now >"
 									/>

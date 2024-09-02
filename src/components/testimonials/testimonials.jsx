@@ -51,11 +51,8 @@ const Testimonials = () => {
 			position: 'Software Engineer',
 		},
 	];
-
 	const len = testimonials.length;
-	console.log('array length', len);
 	let items = Math.floor(len / 3) + (len % 3 ? 1 : 0);
-	console.log('items', items);
 	let testimonialArray = [];
 	for (let i = 0; i < items; i++) {
 		let start = i * 3;

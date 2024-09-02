@@ -111,7 +111,7 @@ const JobDetailsPage = () => {
 							>
 								<Form.Label
 									className="label"
-									htmlFor="position"
+									// htmlFor="position"
 								>
 									Position
 								</Form.Label>
@@ -136,7 +136,7 @@ const JobDetailsPage = () => {
 							>
 								<Form.Label
 									className="label"
-									htmlFor="description"
+									// htmlFor="description"
 								>
 									Description
 								</Form.Label>
@@ -158,7 +158,7 @@ const JobDetailsPage = () => {
 							<Col md={4}>
 								<Form.Label
 									className="label"
-									htmlFor="company"
+									// htmlFor="company"
 								>
 									Company
 								</Form.Label>
@@ -177,7 +177,7 @@ const JobDetailsPage = () => {
 							<Col md={4}>
 								<Form.Label
 									className="label"
-									htmlFor="location"
+									// htmlFor="location"
 								>
 									Location
 								</Form.Label>
@@ -198,7 +198,7 @@ const JobDetailsPage = () => {
 							<Col md={4}>
 								<Form.Label
 									className="label"
-									htmlFor="skills"
+									// htmlFor="skills"
 								>
 									Skills
 								</Form.Label>
@@ -216,7 +216,7 @@ const JobDetailsPage = () => {
 							<Col md={4}>
 								<Form.Label
 									className="label"
-									htmlFor="qualification"
+									// htmlFor="qualification"
 								>
 									Qualification
 								</Form.Label>
@@ -236,7 +236,7 @@ const JobDetailsPage = () => {
 							<Col md={4}>
 								<Form.Label
 									className="label"
-									htmlFor="salary"
+									// htmlFor="salary"
 								>
 									Salary
 								</Form.Label>
@@ -254,7 +254,7 @@ const JobDetailsPage = () => {
 							<Col md={4}>
 								<Form.Label
 									className="label"
-									htmlFor="experience"
+									// htmlFor="experience"
 								>
 									Experience
 								</Form.Label>
@@ -274,7 +274,7 @@ const JobDetailsPage = () => {
 							<Col md={4}>
 								<Form.Label
 									className="label"
-									htmlFor="vacancy"
+									// htmlFor="vacancy"
 								>
 									Vacancies available
 								</Form.Label>
@@ -293,7 +293,7 @@ const JobDetailsPage = () => {
 							<Col md={4}>
 								<Form.Label
 									className="label"
-									htmlFor="vacancy"
+									// htmlFor="vacancy"
 								>
 									Category
 								</Form.Label>

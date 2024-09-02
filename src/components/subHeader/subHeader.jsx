@@ -5,6 +5,7 @@ import Button from './../button/button';
 import { CiLocationOn } from 'react-icons/ci';
 import { PiLineVerticalThin, PiBriefcaseThin } from 'react-icons/pi';
 import { useNavigate } from 'react-router-dom';
+import { useToken } from '../../serviceAPI/UtilityAPIs';
 
 const SubHeader = () => {
 	let locationList = [
@@ -14,6 +15,7 @@ const SubHeader = () => {
 		{ key: 'Parabhani', value: 'Parabhani' },
 	];
 	const navigate = useNavigate();
+	const user = useToken();
 	return (
 		<Row
 			md={12}
@@ -118,46 +120,50 @@ const SubHeader = () => {
 					</Row>
 				</Stack>
 			</Col>
-			<Col
-				md={5}
-				className="right-col-sub-header"
-			>
-				<div className="background-image">
-					<div className="right-form">
-						<Col>
-							<h5>kickstart your career</h5>
-						</Col>
-						<Col>
-							<p className="subHeader-subTitle light-blue-text">
-								Lorem ipsum dolor sit amet, consectetur
-								adipiscing elit. Proin risus nibh, ultricies et
-								auctor.
-							</p>
-						</Col>
-						<Col>
-							<Button
-								text="Register Now"
-								onClick={() =>
-									navigate(
-										'/add-candidate-profile/?mode=viewProfile'
-									)
-								}
-							/>
-						</Col>
-						<Col>
-							<Button
-								className="mt-2 login-button"
-								text="Login"
-								onClick={() =>
-									navigate(
-										'/candidate-login/?mode=viewProfile'
-									)
-								}
-							/>
-						</Col>
+			{user ? (
+				<Col md={5}>
+					<img
+						src="/afterLogin.svg"
+						alt=""
+					/>
+				</Col>
+			) : (
+				<Col
+					md={5}
+					className="right-col-sub-header"
+				>
+					<div className="background-image">
+						<div className="right-form">
+							<Col>
+								<h5>kickstart your career</h5>
+							</Col>
+							<Col>
+								<p className="subHeader-subTitle light-blue-text">
+									Lorem ipsum dolor sit amet, consectetur
+									adipiscing elit. Proin risus nibh, ultricies
+									et auctor.
+								</p>
+							</Col>
+							<Col>
+								<Button
+									text="Register Now"
+									onClick={() =>
+										navigate('/register/?mode=viewProfile')
+									}
+								/>
+							</Col>
+							<Col>
+								<Button
+									className="mt-2 login-button"
+									text="Login"
+									onClick={() =>
+										navigate('/login/?mode=viewProfile')
+									}
+								/>
+							</Col>
+						</div>
 					</div>
-				</div>
-				{/* <Col className="align-center-col medium-text">or</Col>
+					{/* <Col className="align-center-col medium-text">or</Col>
 					<Col className="upload-file">
 						<Col className="choose-cv">
 							Choose your CV or drag it here
@@ -166,7 +172,8 @@ const SubHeader = () => {
 							Upload from local
 						</Col>
 					</Col> */}
-			</Col>
+				</Col>
+			)}
 		</Row>
 	);
 };

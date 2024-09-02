@@ -5,7 +5,12 @@ import { useNavigate } from 'react-router-dom';
 import { useState } from 'react';
 import { useSelector } from 'react-redux';
 import { ConfirmationModal } from '../../components';
-import { deleteService, putService } from '../../serviceAPI/serviceAPI';
+import {
+	deleteService,
+	putService,
+	getService,
+	postService,
+} from '../../serviceAPI/serviceAPI';
 import { mapping } from '../../pages/commonData/categoryDropdown';
 
 function JobCard(props) {
@@ -14,6 +19,9 @@ function JobCard(props) {
 	const [modalTitle, setModalTitle] = useState('');
 	const [modalMessage, setModalMessage] = useState('');
 	const navigate = useNavigate();
+	const user = useSelector((state) => state.currentUser.user);
+	const setShowToast = props.setShowToast;
+	const setToastMessage = props.setToastMessage;
 
 	const closePosition = async (e) => {
 		try {
@@ -58,6 +66,32 @@ function JobCard(props) {
 
 	const appliedCandidates = (e) => {
 		navigate(`/applied-candidates/?id=${props.job._id}`);
+	};
+
+	const handleApply = async () => {
+		if (user === null) {
+			navigate(`/login`);
+		} else {
+			const { data: job } = await getService(
+				`/api/jobs/${props.job._id}`
+			);
+
+			// check if user has already applied for the job
+			if (job.appliedCandidates.includes(user._id)) {
+				setToastMessage('You have already applied for this job!');
+			} else {
+				console.log(user);
+				await postService(`/api/jobs/apply/${props.job._id}`, {
+					candidate: user._id,
+				});
+				setToastMessage('You have successfully applied for this job!');
+			}
+			setShowToast(true);
+			console.log('inside handleApply');
+		}
+		setTimeout(() => {
+			setShowToast(false);
+		}, 3000);
 	};
 
 	return (
@@ -181,10 +215,11 @@ function JobCard(props) {
 					) : (
 						<Col className="d-flex justify-content-center">
 							<Button
-								onClick={() =>
-									navigate(
-										`/candidate-login/?id=${props.job._id}`
-									)
+								onClick={
+									() => handleApply()
+									// navigate(
+									// 	`/login/?id=${props.job._id}`
+									// )
 								}
 								text="Apply"
 							/>

@@ -218,9 +218,9 @@ const Footer = () => {
 					{' '}
 					&#169; 2024 Rrons Workforce All rights reserved{' '}
 				</p>
-				<p className="blue-text m-0 d">
+				{/* <p className="blue-text m-0 d">
 					Designed by Madhu and Developed by Sourabh
-				</p>
+				</p> */}
 			</Row>
 		</Container>
 	);

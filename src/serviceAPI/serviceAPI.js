@@ -1,13 +1,12 @@
 import axios from 'axios';
-// import dotenv from 'dotenv';
 
-// dotenv.config();
 // Service API
 const axiosService = axios.create({
 	baseURL: 'https://rrons-server.onrender.com',
 	// baseURL: 'http://localhost:4001',
 	headers: {
 		'Content-Type': 'application/json',
+		Authorization: `Bearer ${localStorage.getItem('token')}`,
 	},
 });
 
@@ -31,7 +30,7 @@ const postService = async (endpoint, data, formData = false) => {
 		}
 		return response;
 	} catch (error) {
-		console.error('Error posting data:', error);
+		// console.error('Error posting data:', error);
 		throw error;
 	}
 };

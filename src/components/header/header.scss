@@ -1,59 +1,60 @@
-.header-row {
+.header {
 	background-color: #f2f6fd;
-	// background-image: linear-gradient(to right, #141e30, #243b55);
-	// background-color: white;
-	// position: sticky;
-	top: 0;
-	z-index: 1000;
-	padding-top: 1.5rem;
-	padding-bottom: 1.5rem;
-	border-bottom: 1px solid #e0e0e0;
 
-	.header-logo {
-		height: 5rem;
-		margin: 1.5rem;
-		margin-left: 1rem;
-		border-radius: 50%;
-	}
+	.header-row {
+		background-color: #f2f6fd;
+		top: 0;
+		z-index: 1000;
+		padding-top: 1.5rem;
+		padding-bottom: 1.5rem;
+		border-bottom: 1px solid #e0e0e0;
 
-	.header-title-1 {
-		color: #ff4181;
-		font-family: poppins, sans-serif;
-		font-weight: 600;
-		font-size: 1.5rem;
-		padding-left: 2rem;
-		margin-bottom: 0;
-	}
-	.header-title-2 {
-		color: black;
-		font-family: poppins, sans-serif;
-		font-weight: 600;
-		font-size: 1.5rem;
-		margin-bottom: 0;
-	}
+		.header-logo {
+			height: 5rem;
+			margin: 1.5rem;
+			margin-left: 1rem;
+			border-radius: 50%;
+		}
 
-	.header-subtitle {
-		color: #05264e;
-		font-family: poppins, sans-serif;
-		text-decoration: none;
-	}
+		.header-title-1 {
+			color: #ff4181;
+			font-family: poppins, sans-serif;
+			font-weight: 600;
+			font-size: 1.5rem;
+			padding-left: 2rem;
+			margin-bottom: 0;
+		}
+		.header-title-2 {
+			color: black;
+			font-family: poppins, sans-serif;
+			font-weight: 600;
+			font-size: 1.5rem;
+			margin-bottom: 0;
+		}
 
-	.align-bottom-col {
-		display: flex;
-		align-items: flex-end;
-	}
+		.header-subtitle {
+			color: #05264e;
+			font-family: poppins, sans-serif;
+			text-decoration: none;
+		}
 
-	.active-link {
-		border-bottom: 2px solid #ff4181;
-	}
+		.align-bottom-col {
+			display: flex;
+			align-items: flex-end;
+		}
 
-	.login-button {
-		color: #ff4181;
-		background-color: white;
-		border: 1px solid #ff4181;
-		padding-inline: 2rem;
-	}
-	.register-button {
-		padding-inline: 1rem;
+		.active-link {
+			border-bottom: 2px solid #ff4181;
+		}
+
+		.login-button {
+			color: #ff4181;
+			background-color: white;
+			border: 1px solid #ff4181;
+			padding-inline: 2rem;
+		}
+		.register-button {
+			padding-inline: 1rem;
+		}
 	}
 }

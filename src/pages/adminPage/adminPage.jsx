@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
 import { useSelector, useDispatch } from 'react-redux';
 import { Footer, JobCard, Header, Button } from '../../components';
-import { updateUserRole } from '../../slices/currentUserSlice';
+import { updateToken } from '../../slices/currentUserSlice';
 import { useNavigate } from 'react-router-dom';
 import { getService } from '../../serviceAPI/serviceAPI';
 
@@ -15,7 +15,8 @@ const AdminPage = () => {
 	const navigate = useNavigate();
 
 	const signOut = () => {
-		dispatch(updateUserRole({ role: 'client' }));
+		// dispatch(updateToken(null));
+		localStorage.removeItem('token');
 		navigate('/');
 	};
 
