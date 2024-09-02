@@ -13,10 +13,11 @@ const SignInPage = () => {
 	const verifyUser = (e) => {
 		e.preventDefault();
 		if (
-			'sourabhpatil590@gmail.com' === e.target.email.value &&
-			'1234' === e.target.password.value
+			'rutujashinde123@gmail.com' === e.target.email.value &&
+			'Rutuja@321' === e.target.password.value
 		) {
 			console.log('User verified');
+			localStorage.setItem('userRole', 'admin');
 			navigate('/admin');
 		} else {
 			alert('Invalid credentials');

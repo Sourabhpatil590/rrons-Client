@@ -20,7 +20,6 @@ const LoginPage = () => {
 	const [emailID, setEmailID] = useState('');
 	const [password, setPassword] = useState('');
 	const [loading, setLoading] = useState(false);
-	const dispatch = useDispatch();
 
 	// Get query parameters from the URL
 	const queryParams = new URLSearchParams(window.location.search);
@@ -39,7 +38,6 @@ const LoginPage = () => {
 					let response = await generateToken({
 						email: USER_CREDENTIAL.email,
 					});
-					console.log('response', response.data.token);
 					localStorage.setItem('token', response.data.token);
 					setLoading(false);
 					navigate('/');
@@ -63,7 +61,6 @@ const LoginPage = () => {
 
 			// 201 response means user is already registered
 			if (res.status === 200) {
-				// dispatch(updateToken(res.data.token));
 				localStorage.setItem('token', res.data.token);
 				setLoading(false);
 				navigate('/');
