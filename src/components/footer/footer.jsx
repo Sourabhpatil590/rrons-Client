@@ -5,8 +5,10 @@ import { Link } from 'react-router-dom';
 import { CiLocationOn } from 'react-icons/ci';
 import { IoCallOutline } from 'react-icons/io5';
 import { IoMailOutline } from 'react-icons/io5';
+import { useNavigate } from 'react-router-dom';
 
 const Footer = () => {
+	const navigate = useNavigate();
 	return (
 		<Container
 			fluid
@@ -59,6 +61,9 @@ const Footer = () => {
 								<img
 									src="/twitter.png"
 									alt=""
+									onClick={() => {
+										navigate('/sign-in');
+									}}
 								/>
 							</a>
 

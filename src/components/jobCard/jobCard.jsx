@@ -10,6 +10,8 @@ import { deleteService, putService } from '../../serviceAPI/serviceAPI';
 import { mapping } from '../../pages/commonData/categoryDropdown';
 import { FaMapMarkerAlt } from 'react-icons/fa';
 import CompanyHeader from './company_header';
+import { useToken } from '../../serviceAPI/UtilityAPIs';
+import { postService } from '../../serviceAPI/serviceAPI';
 
 export default function JobCard(props) {
 	const role = useSelector((state) => state.currentUser.role);
@@ -17,6 +19,8 @@ export default function JobCard(props) {
 	const [modalTitle, setModalTitle] = useState('');
 	const [modalMessage, setModalMessage] = useState('');
 	const navigate = useNavigate();
+	const user = useToken();
+	let userRole = localStorage.getItem('userRole');
 
 	const closePosition = async (e) => {
 		try {
@@ -154,7 +158,7 @@ export default function JobCard(props) {
 				</Row>
 				<hr />
 				<Row>
-					{role === 'admin' ? (
+					{userRole === 'admin' ? (
 						<Col className="d-flex justify-content-center">
 							<Button
 								onClick={() =>
@@ -184,11 +188,15 @@ export default function JobCard(props) {
 					) : (
 						<Col className="d-flex justify-content-center">
 							<Button
-								onClick={() =>
+								onClick={() => {
+									if (user) {
+									} else {
+										navigate('/login');
+									}
 									navigate(
 										`/candidate-login/?id=${props.job._id}`
-									)
-								}
+									);
+								}}
 								text="Apply"
 							/>
 						</Col>
@@ -227,6 +235,26 @@ const dummy_job = {
 
 export function NewJobCard({ job = dummy_job }) {
 	const navigate = useNavigate();
+	const user = useToken();
+
+	const handleApplyJob = async () => {
+		try {
+			if (user) {
+				if (job.appliedCandidates.includes(user.id)) {
+					alert('You have already applied for this job');
+					return;
+				}
+				let res = await postService(`/api/jobs/apply/${job._id}`, {
+					candidate: user.id,
+				});
+				alert('Applied successfully');
+			} else {
+				navigate('/login');
+			}
+		} catch (error) {
+			alert('Error in applying job');
+		}
+	};
 
 	return (
 		<Card
@@ -292,10 +320,17 @@ export function NewJobCard({ job = dummy_job }) {
 					{/* <Button variant="primary">Apply Now</Button> */}
 					<Button
 						className="login-button"
-						text="Apply"
-						onClick={() =>
-							navigate(`/candidate-login/?id=${job._id}`)
+						disabled={
+							user && job.appliedCandidates.includes(user.id)
+								? true
+								: false
 						}
+						text={
+							user && job.appliedCandidates.includes(user.id)
+								? 'Applied'
+								: 'Apply'
+						}
+						onClick={handleApplyJob}
 					/>
 				</div>
 			</Card.Body>
