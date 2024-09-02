@@ -8,30 +8,22 @@ import { getService } from '../../serviceAPI/serviceAPI';
 
 const AdminPage = () => {
 	const [jobsList, setJobsList] = useState([]);
-	const role = useSelector((state) => state.currentUser.role);
 	const [titleMessage, setTitleMessage] = useState('Open Positions');
 	const [jobStatus, setJobStatus] = useState('open');
 	const dispatch = useDispatch();
 	const navigate = useNavigate();
 
 	const signOut = () => {
-		// dispatch(updateToken(null));
 		localStorage.removeItem('token');
 		navigate('/');
 	};
 
 	const getAllJobs = async (_status = 'open') => {
-		if (role !== 'admin') {
-			navigate('/');
-		}
-		setJobStatus('open');
 		try {
 			const res = await getService(`/api/jobs/?status=${_status}`);
-			// console.log('response:', res);
 			setTitleMessage('Open Positions');
 			setJobsList(res.data);
 		} catch (error) {
-			// navigate('/error');
 			console.log('error', error);
 		}
 	};
@@ -41,7 +33,6 @@ const AdminPage = () => {
 		setTitleMessage('Closed Positions');
 		setJobStatus('closed');
 	};
-	// console.log('jobStatus:', jobStatus);
 
 	useEffect(() => {
 		getAllJobs();
