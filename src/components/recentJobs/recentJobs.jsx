@@ -60,6 +60,8 @@ const RecentJobs = () => {
 				{jobList.map((job) => (
 					<Col
 						md={3}
+						sm={8}
+						xs={10}
 						className="job-item"
 						key={job._id}
 					>

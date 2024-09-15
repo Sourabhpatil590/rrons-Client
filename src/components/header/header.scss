@@ -58,3 +58,22 @@
 		}
 	}
 }
+
+@media screen and (max-width: 768px) {
+	.header {
+		.header-row {
+			.header-logo {
+				height: 4rem;
+			}
+
+			.header-title-1 {
+				font-size: 1.2rem;
+				padding-left: 0.5rem;
+			}
+			.header-title-2 {
+				font-size: 1.2rem;
+				padding-left: 1.3rem;
+			}
+		}
+	}
+}

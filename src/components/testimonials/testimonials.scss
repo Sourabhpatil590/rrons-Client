@@ -18,7 +18,7 @@
 			.carousel-inner {
 				left: 4rem;
 				.carousel-item {
-					.col-md-4 {
+					.testimonial-item {
 						width: 30%;
 						background-color: #fcfdff;
 						border: 1px solid #a8b3bf;
@@ -43,6 +43,30 @@
 			.carousel-control-prev,
 			.carousel-control-next {
 				width: 3%;
+			}
+		}
+	}
+}
+
+@media screen and (max-width: 768px) {
+	.testimonial {
+		padding: 2rem;
+		h3 {
+			font-size: 2.8rem;
+		}
+		.testimonial-row {
+			.carousel {
+				.carousel-inner {
+					left: 2rem;
+					.carousel-item {
+						.testimonial-item {
+							width: 80%;
+							margin: 0;
+							margin-top: 1rem;
+							padding: 1rem;
+						}
+					}
+				}
 			}
 		}
 	}

@@ -21,13 +21,13 @@ const WhyRrons = () => {
 							md={3}
 							className="m-1"
 						>
-							<h1 className="large-element">1k</h1>
+							<h1 className="large-element text-center">1k</h1>
 						</Col>
 						<Col
 							md={3}
 							className="m-1 d-flex align-items-center"
 						>
-							<p className="m-0">
+							<p className="m-0 text-center">
 								Applications Received per vacancy
 							</p>
 						</Col>
@@ -53,13 +53,13 @@ const WhyRrons = () => {
 							md={3}
 							className="m-1 large-element"
 						>
-							<h1 className="large-element">15</h1>
+							<h1 className="large-element text-center">15</h1>
 						</Col>
 						<Col
 							md={3}
 							className="m-1 d-flex align-items-center"
 						>
-							<p className="m-0">Number of Clients</p>
+							<p className="m-0 text-center">Number of Clients</p>
 						</Col>
 					</Row>
 				</Col>
@@ -69,13 +69,15 @@ const WhyRrons = () => {
 							md={2}
 							className="m-1 large-element"
 						>
-							<h1 className="large-element">3</h1>
+							<h1 className="large-element text-center">3</h1>
 						</Col>
 						<Col
 							md={3}
 							className="m-1 d-flex align-items-center"
 						>
-							<p className="m-0">Front end employees</p>
+							<p className="m-0 text-center">
+								Front end employees
+							</p>
 						</Col>
 					</Row>
 				</Col>

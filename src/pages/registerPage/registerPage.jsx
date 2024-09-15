@@ -1,6 +1,6 @@
 import React from 'react';
 import { Container, Row, Col, Form } from 'react-bootstrap';
-import { Header, Loader, Button } from '../../components';
+import { Header, Loader, Button, Footer } from '../../components';
 import { useState, useEffect } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import Accordion from 'react-bootstrap/Accordion';
@@ -134,7 +134,10 @@ const RegisterPage = () => {
 				md={12}
 				className="justify-content-center"
 			>
-				<Col md={8}>
+				<Col
+					md={8}
+					xs={11}
+				>
 					<Form onSubmit={handleSubmit}>
 						<Col className="job-input-form">
 							<Row>
@@ -652,7 +655,10 @@ const RegisterPage = () => {
 
 							<hr />
 							<Row className="p-1 m-2 justify-content-around">
-								<Col md="auto">
+								<Col
+									md="auto"
+									className="d-flex justify-content-center"
+								>
 									<Button
 										variant="primary"
 										type="submit"
@@ -668,6 +674,7 @@ const RegisterPage = () => {
 					</Form>
 				</Col>
 			</Row>
+			<Footer />
 		</Container>
 	);
 };
