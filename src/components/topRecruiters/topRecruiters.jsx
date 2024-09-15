@@ -1,5 +1,5 @@
 import React from 'react';
-import { Row, Col, Stack } from 'react-bootstrap';
+import { Row, Col, Stack, Container } from 'react-bootstrap';
 import './topRecruiters.scss';
 
 const TopRecruiters = () => {
@@ -36,7 +36,10 @@ const TopRecruiters = () => {
 		// },
 	];
 	return (
-		<div className="top-recruiters">
+		<Container
+			fluid
+			className="top-recruiters p-0"
+		>
 			<Row className="d-flex justify-content-center p-5">
 				<Stack>
 					<h2 className="text large-text blue-text text-center pb-3">
@@ -51,12 +54,12 @@ const TopRecruiters = () => {
 
 			<Row
 				md={12}
-				className="d-flex justify-content-center"
+				className="d-flex justify-content-center pb-4"
 			>
 				{recruitersList.map((company) => (
 					<Col
 						md="auto"
-						className="recruiter-item"
+						className="recruiter-item d-flex justify-content-center m-1"
 						key={company.name}
 					>
 						<img
@@ -67,7 +70,7 @@ const TopRecruiters = () => {
 					</Col>
 				))}
 			</Row>
-		</div>
+		</Container>
 	);
 };
 

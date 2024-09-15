@@ -12,7 +12,7 @@ const Footer = () => {
 	return (
 		<Container
 			fluid
-			className="footer mt-5"
+			className="footer mt-5 p-0"
 		>
 			<Row
 				md={12}
@@ -20,7 +20,7 @@ const Footer = () => {
 			>
 				<Col
 					md={4}
-					className="align-center-col left-col"
+					className="align-center-col left-col p-0"
 				>
 					<Stack className="">
 						<div className="d-flex">
@@ -93,9 +93,10 @@ const Footer = () => {
 
 				<Col
 					md={7}
+					sm={12}
 					className="right-col-footer"
 				>
-					<Row
+					{/* <Row
 						md={12}
 						className="justify-content-center"
 					>
@@ -135,16 +136,21 @@ const Footer = () => {
 						>
 							Privacy Policies
 						</Col>
-					</Row>
+					</Row> */}
 					<hr />
 					<Row md={12}>
-						<p className="light-blue-text text text-center">
-							If you are looking for any information, please feel
-							free to contact us
-						</p>
+						<Col>
+							<p className="light-blue-text text text-center">
+								If you are looking for any information, please
+								feel free to contact us
+							</p>
+						</Col>
 					</Row>
 					<Row>
-						<Col md={5}>
+						<Col
+							md={5}
+							className="pb-2"
+						>
 							<CiLocationOn />
 							<p className="pink-text text d-inline-block ps-3">
 								Parbhani District Maharashtra
@@ -165,40 +171,65 @@ const Footer = () => {
 							</div>
 						</Col>
 						<Col
-							md="auto"
-							className=""
+							md={7}
+							className="pb-4"
 						>
-							<p className="blue-text text m-0 pe-0">
-								For Clients
-							</p>
-							<p className="blue-text text m-0 pe-0">
-								For Candidates
-							</p>
-							<p className="blue-text text m-0 pe-0">For help</p>
-						</Col>
-						<Col
-							md="auto"
-							className="ps-0"
-						>
-							<div>
-								<IoMailOutline />
-								<p className="pink-text text m-0 d-inline-block ps-1">
-									rrons.manpowersol@gmail.com
-								</p>
-							</div>
-
-							<div>
-								<IoMailOutline />
-								<p className="pink-text text m-0 d-inline-block ps-1">
-									hr.rrons@gmail.com
-								</p>
-							</div>
-							<div>
-								<IoMailOutline />
-								<p className="pink-text text m-0 d-inline-block ps-1">
-									contact@rrons.in
-								</p>
-							</div>
+							<Row md={12}>
+								<Col
+									md={4}
+									xs={4}
+									className="blue-text text m-0 pe-0 d-inline-block"
+								>
+									For Clients:
+								</Col>
+								<Col xs={8}>
+									<Row>
+										{/* <Col >
+											<IoMailOutline />
+										</Col> */}
+										<Col className="pink-text text m-0 d-inline-block ps-1 email">
+											rrons.manpowersol@gmail.com
+										</Col>
+									</Row>
+								</Col>
+							</Row>
+							<Row>
+								<Col
+									md={4}
+									xs={4}
+									className="blue-text text m-0 pe-0"
+								>
+									For Candidates:
+								</Col>
+								<Col>
+									<Row>
+										{/* <Col>
+											<IoMailOutline />
+										</Col> */}
+										<Col className="pink-text text m-0 d-inline-block ps-1 email">
+											hr.rrons@gmail.com
+										</Col>
+									</Row>
+								</Col>
+							</Row>
+							<Row>
+								<Col
+									md={4}
+									xs={4}
+								>
+									<p className="blue-text text m-0 pe-0">
+										For help:
+									</p>
+								</Col>
+								<Col>
+									<Row>
+										{/* <IoMailOutline /> */}
+										<Col className="pink-text text m-0 d-inline-block ps-1 email">
+											contact@rrons.in
+										</Col>
+									</Row>
+								</Col>
+							</Row>
 						</Col>
 					</Row>
 				</Col>

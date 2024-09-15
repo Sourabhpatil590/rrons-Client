@@ -102,3 +102,28 @@
 		}
 	}
 }
+
+@media screen and (max-width: 768px) {
+	.category {
+		.vstack {
+			h3 {
+				padding-top: 2rem;
+			}
+			.category-row {
+				.carousel {
+					.carousel-inner {
+						padding-left: 0;
+						.carousel-item {
+							.category-item {
+								height: 2rem;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+	.we-are-hiring {
+		padding-inline: 1rem;
+	}
+}

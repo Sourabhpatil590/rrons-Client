@@ -44,3 +44,19 @@
 		}
 	}
 }
+
+@media screen and (max-width: 768px) {
+	.recent-jobs {
+		.row-cols-md-12 {
+			.job-item {
+				width: 80% !important;
+				margin-right: 0;
+				.vstack {
+					.job-description {
+						height: 5rem;
+					}
+				}
+			}
+		}
+	}
+}

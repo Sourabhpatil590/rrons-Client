@@ -39,12 +39,12 @@ const SubHeader = () => {
 						</h4>
 					</Col>
 					<JobSearchBar />
-					<Col className=" pt-5 popular-clients:">
+					<Col className="pt-5 popular-clients d-flex justify-content-center">
 						<p>Popular clients</p>
 					</Col>
 					<Row>
 						<Col
-							className=""
+							className="d-flex justify-content-center"
 							md="auto"
 						>
 							<img
@@ -54,7 +54,7 @@ const SubHeader = () => {
 							/>
 						</Col>
 						<Col
-							className=""
+							className="d-flex justify-content-center"
 							md="auto"
 						>
 							<img
@@ -64,7 +64,7 @@ const SubHeader = () => {
 							/>
 						</Col>
 						<Col
-							className=""
+							className="d-flex justify-content-center"
 							md="auto"
 						>
 							<img
@@ -74,7 +74,7 @@ const SubHeader = () => {
 							/>
 						</Col>
 						<Col
-							className=""
+							className="d-flex justify-content-center p-1"
 							md="auto"
 						>
 							<img
@@ -87,10 +87,14 @@ const SubHeader = () => {
 				</Stack>
 			</Col>
 			{user ? (
-				<Col md={5}>
+				<Col
+					md={5}
+					className="right-col-sub-header"
+				>
 					<img
 						src="/afterLogin.svg"
 						alt=""
+						width="100%"
 					/>
 				</Col>
 			) : (

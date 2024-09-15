@@ -18,85 +18,77 @@ const Header = () => {
 	return (
 		<Container
 			fluid
-			className="header"
+			className="header p-0"
 		>
 			<Row
 				className="header-row d-flex position-sticky"
 				md={12}
 				sm={12}
 			>
-				{/* <Col md={1}></Col> */}
-				{/* <Col
-				md={1}
-				className="align-center-col ps-5"
-			>
-				<Link to="/">
-					<img
-						src="/logo.jpg"
-						alt="logo"
-						className="header-logo"
-					/>
-				</Link>
-			</Col> */}
 				<Col className="d-flex">
-					<Col md="auto">
-						<p className="header-title-1">RRONS</p>
-					</Col>
-					<Col
-						md="auto"
-						className="ps-0"
-					>
-						<p className="header-title-2">WORKFORCE</p>
-					</Col>
-
-					{/* <Col className="d-flex justify-content-end p-2 pe-5"> */}
-					<Col
-						md="auto"
-						className="align-center-col"
-					>
-						<NavLink
-							to="/"
-							// className="header-subtitle active-link ps-3 pe-4"
-							className={({ isActive }) =>
-								isActive
-									? 'header-subtitle active-link ps-3 pe-4'
-									: 'header-subtitle ps-3 pe-4'
-							}
+					<Row>
+						<Col md="auto">
+							<p className="header-title-1">RRONS</p>
+						</Col>
+						<Col
+							md="auto"
+							className="ps-0"
 						>
-							Home
-						</NavLink>
-					</Col>
-					<Col
-						md="auto"
-						className="align-center-col"
-					>
-						<NavLink
-							to="/find-job"
-							className={({ isActive }) =>
-								isActive
-									? 'header-subtitle active-link ps-3 pe-4'
-									: 'header-subtitle ps-3 pe-4'
-							}
-						>
-							All Jobs
-						</NavLink>
-					</Col>
-					<Col
-						md="auto"
-						className="align-center-col"
-					>
-						<NavLink
-							to="/about-us"
-							className={({ isActive }) =>
-								isActive
-									? 'header-subtitle active-link ps-3 pe-4'
-									: 'header-subtitle ps-3 pe-4'
-							}
-						>
-							More
-						</NavLink>
-					</Col>
+							<p className="header-title-2">WORKFORCE</p>
+						</Col>
+					</Row>
 				</Col>
+				<Col>
+					<Row>
+						<Col
+							md="auto"
+							className="align-center-col"
+						>
+							<NavLink
+								to="/"
+								// className="header-subtitle active-link ps-3 pe-4"
+								className={({ isActive }) =>
+									isActive
+										? 'header-subtitle active-link ps-3 pe-4'
+										: 'header-subtitle ps-3 pe-4'
+								}
+							>
+								Home
+							</NavLink>
+						</Col>
+						<Col
+							md="auto"
+							className="align-center-col"
+						>
+							<NavLink
+								to="/find-job"
+								className={({ isActive }) =>
+									isActive
+										? 'header-subtitle active-link ps-3 pe-4'
+										: 'header-subtitle ps-3 pe-4'
+								}
+							>
+								All Jobs
+							</NavLink>
+						</Col>
+						{/* <Col
+							md="auto"
+							className="align-center-col"
+						>
+							<NavLink
+								to="/about-us"
+								className={({ isActive }) =>
+									isActive
+										? 'header-subtitle active-link ps-3 pe-4'
+										: 'header-subtitle ps-3 pe-4'
+								}
+							>
+								More
+							</NavLink>
+						</Col> */}
+					</Row>
+				</Col>
+
 				<Col className=" d-flex justify-content-end ">
 					<Row className="d-flex">
 						{user ? (

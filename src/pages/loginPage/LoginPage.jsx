@@ -87,15 +87,18 @@ const LoginPage = () => {
 			{loading && <Loader />}
 			<Header />
 
-			<Row className="d-flex justify-content-center">
+			<Row
+				className="d-flex justify-content-center"
+				md={12}
+				xs={12}
+			>
 				<Col
 					md={3}
-					className="p-5 m-5 border border-dark rounded shadow-lg"
+					sm={8}
+					xs={10}
+					className="p-5 m-5 border border-dark rounded shadow-lg login-col"
 				>
-					<form
-						// onSubmit={handleSubmit}
-						className="Login-form"
-					>
+					<form className="Login-form">
 						<div className="form-group">
 							<Row>
 								<Col className="align-center-col text blue-text text-700 text-22">
