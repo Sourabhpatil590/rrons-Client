@@ -1,11 +1,12 @@
 import axios from 'axios';
 
-const baseURL = 'http://localhost:4001';
+// const baseURL = 'http://localhost:4001';
+const baseURL = 'https://rrons-server.onrender.com';
 
 // Service API
 const axiosService = axios.create({
-	// baseURL: 'https://rrons-server.onrender.com',
-	baseURL: 'http://localhost:4001',
+	baseURL: 'https://rrons-server.onrender.com',
+	// baseURL: 'http://localhost:4001',
 	headers: {
 		'Content-Type': 'application/json',
 		Authorization: `Bearer ${localStorage.getItem('token')}`,
