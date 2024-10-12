@@ -11,6 +11,8 @@ import ProfilePage from './profilePage/profilePage';
 import AppliedCandidates from './appliedCandidatePage/appliedCandidates';
 import ErrorPage from './errorPage/errorPage';
 import LoginPage from './loginPage/LoginPage';
+import VerifyOTP from './verfiyOTP/verifyOTP';
+import ResetPassword from './resetPassword/resetPassword';
 
 export {
 	HomePage,
@@ -25,5 +27,7 @@ export {
 	ContactUs,
 	ProfilePage,
 	AppliedCandidates,
+	VerifyOTP,
 	ErrorPage,
+	ResetPassword,
 };

@@ -178,7 +178,7 @@ const LoginPage = () => {
 						<Row>
 							<Col className="d-flex align-content-center justify-content-end">
 								<Link
-									to="/forgot-password"
+									to={`/forgot-password`}
 									className="text-decoration-none align-content-center  text text-14 blue-text"
 								>
 									{' '}

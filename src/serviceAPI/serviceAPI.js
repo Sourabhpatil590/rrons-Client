@@ -1,18 +1,25 @@
 import axios from 'axios';
 
+const baseURL = 'http://localhost:4001';
+
 // Service API
 const axiosService = axios.create({
-	baseURL: 'https://rrons-server.onrender.com',
-	// baseURL: 'http://localhost:4001',
+	// baseURL: 'https://rrons-server.onrender.com',
+	baseURL: 'http://localhost:4001',
 	headers: {
 		'Content-Type': 'application/json',
 		Authorization: `Bearer ${localStorage.getItem('token')}`,
 	},
 });
 
-const getService = (endpoint) => {
+const getService = async (endpoint) => {
 	try {
-		const response = axiosService.get(endpoint);
+		const response = await axios.get(baseURL + endpoint, {
+			headers: {
+				'Content-Type': 'application/json',
+				Authorization: `Bearer ${localStorage.getItem('token')}`,
+			},
+		});
 		return response;
 	} catch (error) {
 		console.error('Error fetching data:', error);
@@ -39,6 +46,7 @@ const putService = async (endpoint, data, form) => {
 	// data['_method'] = 'PUT';
 	try {
 		if (form) {
+			console.log('inside form');
 			const formData = new FormData();
 			for (const key in data) {
 				formData.append(key, data[key]);
