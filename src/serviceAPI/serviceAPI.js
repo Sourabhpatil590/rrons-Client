@@ -32,9 +32,19 @@ const postService = async (endpoint, data, formData = false) => {
 	try {
 		let response;
 		if (formData) {
-			response = await axiosService.postForm(endpoint, data);
+			response = await axios.postForm(baseURL + endpoint, data, {
+				contentType: 'multipart/form-data',
+				headers: {
+					Authorization: `Bearer ${localStorage.getItem('token')}`,
+				},
+			});
 		} else {
-			response = await axiosService.post(endpoint, data);
+			response = await axios.post(baseURL + endpoint, data, {
+				contentType: 'multipart/form-data',
+				headers: {
+					Authorization: `Bearer ${localStorage.getItem('token')}`,
+				},
+			});
 		}
 		return response;
 	} catch (error) {
@@ -53,14 +63,20 @@ const putService = async (endpoint, data, form) => {
 				formData.append(key, data[key]);
 			}
 			data = formData;
-			const response = await axiosService.putForm(endpoint, data, {
+			const response = await axios.putForm(baseURL + endpoint, data, {
 				contentType: 'multipart/form-data',
+				headers: {
+					Authorization: `Bearer ${localStorage.getItem('token')}`,
+				},
 			});
 			return response;
 		}
 
-		const response = await axiosService.put(endpoint, data, {
-			contentType: 'multipart/form-data',
+		const response = await axios.put(baseURL + endpoint, data, {
+			'Content-Type': 'application/json',
+			headers: {
+				Authorization: `Bearer ${localStorage.getItem('token')}`,
+			},
 		});
 		return response;
 	} catch (error) {
@@ -71,7 +87,12 @@ const putService = async (endpoint, data, form) => {
 
 const deleteService = async (endpoint) => {
 	try {
-		const response = await axiosService.delete(endpoint);
+		const response = await axios.delete(baseURL + endpoint, {
+			'Content-Type': 'application/json',
+			headers: {
+				Authorization: `Bearer ${localStorage.getItem('token')}`,
+			},
+		});
 		return response;
 	} catch (error) {
 		console.error('Error deleting data:', error);
