@@ -19,6 +19,8 @@ import {
 	ProfilePage,
 	AppliedCandidates,
 	ErrorPage,
+	VerifyOTP,
+	ResetPassword,
 } from '../pages';
 import { Provider } from 'react-redux';
 import store from '../store';
@@ -74,6 +76,14 @@ const router = createBrowserRouter(
 			<Route
 				path="applied-candidates"
 				element={<AppliedCandidates />}
+			></Route>
+			<Route
+				path="forgot-password"
+				element={<VerifyOTP />}
+			></Route>
+			<Route
+				path="reset-password"
+				element={<ResetPassword />}
 			></Route>
 			<Route
 				path="error"
