@@ -4,12 +4,9 @@ import { useNavigate } from 'react-router-dom';
 import { Col, Row, Container } from 'react-bootstrap';
 import { Footer, Header, Button, Loader } from '../../components';
 import './loginPage.scss';
-import { postService } from '../../serviceAPI/serviceAPI';
 import { Link } from 'react-router-dom';
 import { GoogleLogin } from '@react-oauth/google';
 import { jwtDecode } from 'jwt-decode';
-import { useDispatch } from 'react-redux';
-import { updateUser, updateToken } from '../../slices/currentUserSlice';
 import {
 	login,
 	checkIfUserExists,
@@ -20,12 +17,7 @@ const ForgotPassword = () => {
 	const [emailID, setEmailID] = useState('');
 	const [password, setPassword] = useState('');
 	const [loading, setLoading] = useState(false);
-	const dispatch = useDispatch();
 
-	// Get query parameters from the URL
-	const queryParams = new URLSearchParams(window.location.search);
-	const jobId = queryParams.get('id');
-	const mode = queryParams.get('mode');
 	const navigate = useNavigate();
 
 	const handleSuccess = async (response) => {

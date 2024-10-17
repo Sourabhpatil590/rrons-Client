@@ -31,39 +31,50 @@ const ResetPassword = () => {
 		}
 	};
 	return (
-		<Container>
+		<Container fluid>
 			<Header />
-			<Row>
-				<Col>
-					<h1>Reset Password</h1>
-				</Col>
-			</Row>
-			<Row>
-				<Col>
-					<input
-						type="password"
-						placeholder="Enter password"
-						name="password"
-						ref={password}
-					></input>
-				</Col>
-			</Row>
-			<Row>
-				<Col>
-					<input
-						type="text"
-						placeholder="Enter confirm password"
-						name="confirmPassword"
-						ref={confirmPassword}
-					></input>
-				</Col>
-			</Row>
-			<Row>
-				<Col>
-					<Button
-						text="Submit"
-						onClick={handleSubmit}
-					/>
+			<Row className="d-flex justify-content-center align-items-center py-3">
+				<Col className="col-4 border-1 rounded-1 border border-dark m-3">
+					<Row>
+						<Col>
+							<h1 className="text blue-text medium-text m-3">
+								Reset Password
+							</h1>
+						</Col>
+					</Row>
+					<hr />
+					<Row>
+						<Col>
+							<input
+								type="password"
+								placeholder="Enter password"
+								name="password"
+								className="text blue-text text-16 rounded border border-dark m-3 p-2"
+								ref={password}
+							></input>
+						</Col>
+					</Row>
+					<Row>
+						<Col>
+							<input
+								type="text"
+								placeholder="Enter confirm password"
+								name="confirmPassword"
+								className="text blue-text text-16 rounded border border-dark m-3 p-2"
+								ref={confirmPassword}
+							></input>
+						</Col>
+					</Row>
+					<hr />
+					<Row>
+						<Col className="d-flex justify-content-center m-3">
+							<Button
+								className="p-2"
+								text="Submit"
+								onClick={handleSubmit}
+							/>
+						</Col>
+					</Row>
 				</Col>
 			</Row>
 

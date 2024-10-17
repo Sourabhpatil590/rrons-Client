@@ -31,7 +31,7 @@ const VerifyOTP = () => {
 		}
 		let otp = generateOTP();
 		try {
-			let res = postService('/api/users/send-otp-email', {
+			postService('/api/users/send-otp-email', {
 				emailID: emailID,
 				otp: otp,
 			});
@@ -50,56 +50,74 @@ const VerifyOTP = () => {
 	};
 
 	return (
-		<Container>
+		<Container fluid>
 			<Header />
-			<Row>
-				<Col>
-					<h1>Enter registered email ID</h1>
-				</Col>
-			</Row>
-			<Row>
-				<Col>
-					<input
-						placeholder="Enter your email ID"
-						value={emailID}
-						onChange={(e) => setEmailID(e.target.value)}
-					></input>
-				</Col>
-			</Row>
-			<Row>
-				<Col>
-					<Button
-						text="Generate OTP"
-						onClick={sendGenerateOTP}
-					/>
-				</Col>
-			</Row>
-			{showOTPInput && (
-				<>
+			<Row className="d-flex justify-content-center align-items-center py-3">
+				<Col className="col-4 border-1 rounded-1 border border-dark m-3">
 					<Row>
 						<Col>
-							<h1>Enter OTP</h1>
+							<h1 className="text blue-text medium-text m-3">
+								Enter registered email ID
+							</h1>
 						</Col>
 					</Row>
+					<hr />
 					<Row>
-						<Col>
+						<Col className="col-12 d-flex justify-content-center">
 							<input
-								value={otp}
-								name="otp"
-								onChange={handleChange}
+								placeholder="Enter your registered email address"
+								value={emailID}
+								onChange={(e) => setEmailID(e.target.value)}
+								className="text blue-text text-16 rounded border border-dark m-3 p-2"
+								width="100%"
+								type="email"
 							></input>
 						</Col>
 					</Row>
 					<Row>
-						<Col>
+						<Col className="d-flex justify-content-center m-3">
 							<Button
-								text="Verify"
-								onClick={verifyOTP}
+								className="p-2"
+								text="Generate OTP"
+								onClick={sendGenerateOTP}
 							/>
 						</Col>
 					</Row>
-				</>
-			)}
+					{showOTPInput && (
+						<>
+							<hr />
+							<Row>
+								<Col>
+									<h1 className="text blue-text medium-text m-3">
+										Enter OTP
+									</h1>
+								</Col>
+							</Row>
+							<Row>
+								<Col className="col-12 d-flex justify-content-center">
+									<input
+										value={otp}
+										name="otp"
+										onChange={handleChange}
+										className="text blue-text text-16 rounded border border-dark m-3 p-2"
+										maxLength="4"
+									></input>
+								</Col>
+							</Row>
+							<Row>
+								<Col className="d-flex justify-content-center m-3">
+									<Button
+										className="p-2"
+										text="Verify"
+										onClick={verifyOTP}
+									/>
+								</Col>
+							</Row>
+						</>
+					)}
+				</Col>
+			</Row>
+
 			<Footer />
 		</Container>
 	);
